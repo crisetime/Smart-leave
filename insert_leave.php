@@ -22,10 +22,6 @@
 	$d_o_apply=date("Y/m/d");
 	$no_of_days = $datetime1->diff($datetime2);
 	$no_of_days=$no_of_days->days;
-	
-	//if(isset['submit']){
-	//$sql = "SELECT * FROM apply_for_leave where emp_id='$emp_id' and leave_type='$leave_type' and from='$from' and to='$to')" ;
-	
 	$result = mysqli_query($link,"SELECT * FROM apply_for_leave where emp_id='$emp_id' and leave_type='$leave_type' and leave_from='$from' and leave_to='$to' ");
 	$rows = mysqli_num_rows($result);
 	if($rows==0)
@@ -48,7 +44,7 @@
 				{
 				
 				$sec='2';
-			if($_SESSION['designation'] == 'hod'|| $_SESSION['designation'] == 'professor'||$_SESSION['designation'] == 'assistant_professor'||$_SESSION['designation'] == 'associate_professor')
+			if($_SESSION['designation'] == 'hod')
 					header("Refresh: $sec, url=interface.php");
 				else 
 					header("Refresh: $sec, url=userpage.php");
