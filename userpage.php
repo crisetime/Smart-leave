@@ -17,7 +17,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
         <header id="header">
           <h1> <?php echo " Hi " .$_SESSION["name"] ?></h1>
           <p>Welcome to leave hive  <?php echo $_SESSION['name'] ?> </p>
-		    
+
         </header>
 
         <div id="main">
@@ -30,24 +30,24 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 
           </ul>
         </nav>
-		
+
 		 <!-- Content -->
             <section id="content" class="main">
 				<div class="box alt">
                     <div class="row uniform">
 						<div class="2u"> </div>
 							<div class="2u" style="color:orange"><a href="profile.php">Profile<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a></div>
-								<div class="4u"> </div> 
+								<div class="4u"> </div>
 								<div class="2u$" style="color:#91DC5A"><a href="leave_apply.php">Apply leave<span class="image fit"><img src="images/apply.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
-                    
+
 								<div class="2u"> </div>
 							<div class="2u"  style="color:#FFDA44"><a href="status.php">Status<span class="image fit"><img src="images/status.svg" alt="view your status" title="View your status" /></span></a></div>
 						<div class="4u"> </div>
 						<div class="2u$" style="color:#b645ef"><a href="history.php">History<span class="image fit"><img src="images/history.svg" alt="view your history" title="View Leave History" /></span></a></div>
 						<div class="2u"> </div>
-						<div class="2u" style="color:cyan"><a href="viewtimetable.php">Time table<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a></div>
-						<div class="4u"> </div> 
-						<div class="2u$" style="color:red"><a href="#link">Attendence<span class="image fit"><img src="images/ban.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
+						<div class="2u" style="color:cyan"><a href="timetable.php">Time table<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a></div>
+						<div class="4u"> </div>
+						<div class="2u$" style="color:red"><a href="approveconsent.php">Notification<span class="image fit"><img src="images/ban.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
 					</div>
 				</div>
             </section>
@@ -79,7 +79,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
             </section>
             <p class="copyright">&copy; Leave hive team. Designd by Vikrant</p>
           </footer>
-			
+
   </div>
 
 
