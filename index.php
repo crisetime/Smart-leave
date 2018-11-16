@@ -138,8 +138,8 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 							<section id="cta" class="main special">
 								<header class="major">
 									<h2>Computer Science Department,MNNIT Allahabad</h2>
-									<p>Made in the guidance of our DBMS teacher, Dr.Shashwati Banerjee<br />
-									 thanks to her for giving us this opputunity and supporting us.</p>
+									<p>Made in the guidance of our project mentor Dr. Navjot Singh<br />
+									 thanks to him for giving us this opputunity and supporting us.</p>
 								</header>
 								<footer class="major">
 									<ul class="actions">
