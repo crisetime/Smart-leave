@@ -38,11 +38,11 @@
 
 
 <form class="form-control" name="formname" action="logintemp.php" method="post">
-                  
+
                  <select name="class" id="class">
                               <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Select Class -</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Manufacturing</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shipping</font></font></option>
+                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MCA</font></font></option>
+                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MBA</font></font></option>
                               <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administration</font></font></option>
                               <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">human Resources</font></font></option>
                             </select> <br>
@@ -56,15 +56,15 @@
                             </select>
                             <br>
 
-           
+
                   <ul class="actions">
                           <li><input type="submit" class="button special" name="submit" value="Go to time table"></li>
                             <li><input type="reset" value="Reset"></li>
                   </ul>
 
 
-                
-              
+
+
 
                 </form>
 
