@@ -28,15 +28,15 @@ session_start();
           <!-- Content -->
             <section id="content" class="main">
 
-		        
+
                 <form class="form-control" name="formname" action="insert_leave.php" method="post">
-                  
+
                 From : <input type="date" name="from" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" required="">   &nbsp &nbspTo : <input type="date" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" name="to" required=""></br></br>
-                    
+
                   <select name="type" class="demo-categoery">
                     <option value="">Type of leave</option>
-                              <option value="commuted">Commuted Leave</option>
-							  <option value="earn">Earn Leave</option>
+                              <option value="commuted">Casual Leave</option>
+							  <option value="earn">Earned Leave</option>
 							  <option value="medical">Medical Leave</option>
                               <option value="special_cl">Special Casual Leave(during vacations only)</option>
                               <option value="half_pay">Half Pay Leave</option>
@@ -46,13 +46,13 @@ session_start();
                   <input type="text" name="contact" placeholder="Contact Number" required=""></br>
                   <input type="text" name="address" placeholder="Out for (City name)"></br>
                   <textarea rows="5" placeholder="Appliation including reason ,full address etc." name="reason" required=""></textarea></br>
-                  
+
                 <ul class="actions">
                   <li><input type="submit" class="button special" name="submit" value="Submit"></li>
                   <li><input type="reset" name="reset" class="button "></li>
                 </ul>
-            
-                
+
+
 
                 </form>
 
