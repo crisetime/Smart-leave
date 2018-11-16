@@ -1,9 +1,9 @@
 <?php
 session_start();
 function confirm($eid,$type)
-{ 
-	
-	//header("location:#");	
+{
+
+	//header("location:#");
 }
 function cancel($eid,$type)
 {
@@ -74,17 +74,17 @@ alert("You decided to not cancel the form!");
 														<th>To</th>
 														<th>type</th>
 														<th>approve</th>
-														<th>cancel<th>
+														<th>Not Approve<th>
 													</tr>
 												</thead>
 												<tbody style="color:gray">
-												
+
 					<?php
 					$conn = mysqli_connect('localhost','root','','e-leavesystem');
 					$dept=$_SESSION['department'];
 					$sql = "SELECT * FROM apply_for_leave WHERE status='pending' AND department='$dept' AND emp_id NOT IN (SELECT DISTINCT head_id FROM leave_providers WHERE designation='hod') ";
 					$res=mysqli_query($conn,$sql);
-					
+
 					while( $row = mysqli_fetch_array($res))
 					{
 					$eid=$row['emp_id'];
@@ -102,39 +102,39 @@ alert("You decided to not cancel the form!");
 					<!-- demo datt -->
 					<!-- passing the selected employee's details -->
 						<td>
-							<form action="user_leave.php" method="get">					
+							<form action="user_leave.php" method="get">
 						        <input type="hidden" name="empid" value="<?php echo $row['emp_id']; ?>" />
 								<input type="hidden" name="type" value="<?php echo $row['leave_type']; ?>" />
 								<input type="hidden" name="days" value="<?php echo $num->days; ?>" />
-								<input type="submit" name="emp" value="<?php echo $row_sqll['fname']." ".$row_sqll['lname'];?>" /> 
+								<input type="submit" name="emp" value="<?php echo $row_sqll['fname']." ".$row_sqll['lname'];?>" />
 							</form>
 						</td>
 						<td><?php echo $row['emp_id']; ?></td>
 						<td><?php echo $row['leave_from']; ?></td>
 						<td><?php echo $row['leave_to']; ?></td>
 						<td><?php echo $row['leave_type']; ?></td>
-						
+
 						<form method="get">
 						<td>
 						<input type="hidden" name="l_from" value="<?php echo $row['leave_from']; ?>" />
 						<input type="hidden" name="l_to" value="<?php echo $row['leave_to']; ?>" />
 						<input type="hidden" name="eid" value="<?php echo $row['emp_id']; ?>" />
 						<button type="submit" class="button special fit" style="background-color:green; hover background-color:gray"
-						onclick="confSubmit1()" name="approve" value="<?php echo $row['leave_type']; ?>" >approve</button>
+						onclick="confSubmit1()" name="approve" value="<?php echo $row['leave_type']; ?>" >Approve</button>
 						</td>
 						<td>
 						<button type="submit" class="button special fit" style="background-color:red; hover background-color:gray"
-						onclick="confSubmit2()" name="cancel" value="<?php echo $row['leave_type']; ?>" >cancel</button>
+						onclick="confSubmit2()" name="cancel" value="<?php echo $row['leave_type']; ?>" >Not Approve</button>
 						</td>
 						</form>
-											
+
 						</tr>
 						<?php
 						}
-												
+
 						if(isset($_GET['approve']))
 						{
-										
+
 						$conn = mysqli_connect('localhost','root','','e-leavesystem');
 						$eid=$_GET['eid'];
 						$type=$_GET['approve'];
@@ -143,10 +143,10 @@ alert("You decided to not cancel the form!");
 						$sql= " UPDATE apply_for_leave SET status='sanctioned' WHERE emp_id='$eid' and leave_type='$type'
 						and leave_from='$l_from' and leave_to='$l_to' ";
 						mysqli_query($conn,$sql);
-											
+
 						$d1=date_create($l_from);
 						$d2=date_create($l_to);
-						$num=$d1->diff($d2);			
+						$num=$d1->diff($d2);
 						mysqli_query($conn,"UPDATE remaining_leave set $type = $type-($num->days) WHERE emp_id='$eid' ") ;
 						header("refresh:1,url=grant.php");
 						}
@@ -156,8 +156,8 @@ alert("You decided to not cancel the form!");
 						$type=$_GET['cancel'];
 						$l_from=$_GET['l_from'];
 						$l_to=$_GET['l_to'];
-						$conn = mysqli_connect('localhost','root','','e-leavesystem');												
-						$sql= " UPDATE apply_for_leave SET status='cancel' WHERE emp_id='$eid' and leave_type='$type' 
+						$conn = mysqli_connect('localhost','root','','e-leavesystem');
+						$sql= " UPDATE apply_for_leave SET status='cancel' WHERE emp_id='$eid' and leave_type='$type'
 							and leave_from='$l_from' and leave_to='$l_to' ";
 						mysqli_query($conn,$sql);
 						header("refresh:1,url=grant.php");
