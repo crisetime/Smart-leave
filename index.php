@@ -14,7 +14,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 
 <body>
 
-	
+
 <div id="wrapper">
 
 				<!-- Header -->
@@ -57,11 +57,11 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 
 							<!-- First Section -->
 							<section id="first" class="main special">
-								
+
 								<header class="major">
 									<h2>leave details</h2>
 								</header>
-								
+
 								<ul class="features">
 									<li>
 										<span class="icon major style1 fa-diamond"></span>
@@ -74,7 +74,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 									<li>
 										<span class="icon major style5 fa-diamond"></span>
 										<h3><b>Special CL</b></h3>
-										
+
 									</li>
 									<li>
 										<span class="icon major style4 fa-diamond"></span>
@@ -106,23 +106,23 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 								</header>
 								<ul class="statistics">
 									<li class="style1">
-										<span class="icon fa-code-fork"></span>
+										<!-- <span class="icon fa-code-fork"></span> -->
 										<strong>Vikrant Singh</strong>7905918368
 									</li>
 									<li class="style2">
-										<span class="icon fa-folder-open-o"></span>
-										<strong>Zehra Naqvi</strong>7054834307
+										<!-- <span class="icon fa-folder-open-o"></span> -->
+										<strong>Vinay singh</strong>8273460709
 									</li>
 									<li class="style3">
-										<span class="icon fa-signal"></span>
+										<!-- <span class="icon fa-signal"></span> -->
 										<strong>Tripti Verma</strong>8081857340
 									</li>
 									<li class="style4">
-										<span class="icon fa-laptop"></span>
+										<!-- <span class="icon fa-laptop"></span> -->
 										<strong>Vaishali Vinay</strong>9598703253
 									</li>
 									<li class="style5">
-										<span class="icon fa-diamond"></span>
+										<!-- <span class="icon fa-diamond"></span> -->
 										<strong>Admin</strong> 8563077431
 									</li>
 								</ul>
@@ -162,7 +162,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 							<section>
 								<h2>Contact Us</h2>
 								<dl class="alt">
-									
+
 									<dt>Phone</dt>
 									<dd>(+91)8090 410 264</dd>
 									<dt>Email</dt>
@@ -173,7 +173,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 									<li><a href="https://www.facebook.com/profile.php?id=100003661545540&ref=bookmarks" target="_blank" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
 									<li><a href="https://www.instagram.com/crise_time/" target="_blank" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
 									<li><a href="https://github.com/crisetime"  target="_blank" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-									
+
 								</ul>
 							</section>
 							<p class="copyright">&copy; Leave hive team. Designd by Team leave hive</p>
@@ -181,9 +181,9 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 
 
 			</div>
-	
 
-	
+
+
 <!-- <center><a href="login.html" class="button special"  >Get started</a></center> -->
 
 
@@ -198,5 +198,5 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-	
+
 </body>
