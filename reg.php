@@ -3,7 +3,7 @@
 	<title>Sign up</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	
+
 	<script LANGUAGE="JavaScript">
 	function validate() {
     isValid = (document.formname.password.value == document.formname.cpassword.value)
@@ -12,11 +12,11 @@
 	}
 
 </script>
-	
+
 <body>
-	
+
 	<div id="wrapper">
-	
+
 					<header id="header">
 						<h1>Sign up </h1>
 						<p>Sign up to leave hive</p>
@@ -29,7 +29,7 @@
 							<li><a href="index.php" >Home</a></li>
 							<li><a href="login.php">Log in</a></li>
 							<li><a href="#" class="active">Sign up</a></li>
-							
+
 						</ul>
 					</nav>
 
@@ -66,11 +66,11 @@
 										<select class="demo-categoery" name="designation" required="">
 										<option value="">Choose designation</option>
 										<!--option value="registrar">Registrar</option-->
-										<option value="hod">H.O.D.</option>
+
 										<option value="professor">Professor</option>
 										<option value="assistant_professor">Assistant Professor</option>
 										<option value="associate_professor">Associate Professor</option>
-										<option value="lecturar">Lecturar</option>
+										<option value="lecturar">Lecturer</option>
 										<option value="g_faculty">Guset faculty</option>
 										<option value="g_faculty">Other</option>
 										</select>
@@ -82,16 +82,16 @@
 										<option value="sms">S.M.S.</option>
 										</select>
 										</div>
-										
+
 
 										<div class="12u$" >
 										<input type="password" name="password" id="password" onKeyUp="validate()" placeholder="Password (min. 8 char)" required></div>
 										<div class="12u">
 										<input type="password" name="cpassword" id="cpassword" onKeyUp="validate()" placeholder="Confirm Password" required>
 										</div>
-										
+
 										<div class="12u$">
-										<input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" disabled>									
+										<input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" disabled>
 										<input type="reset">
 										<br>
 										<p>Already member? Login <a href="login.php">here</a></p>
@@ -115,7 +115,7 @@
 							<section>
 								<h2>Contact Us</h2>
 								<dl class="alt">
-									
+
 									<dt>Phone</dt>
 									<dd>(+91)8090 410 264</dd>
 									<dt>Email</dt>
@@ -126,7 +126,7 @@
 									<li><a href="https://www.facebook.com/profile.php?id=100003661545540&ref=bookmarks" target="_blank" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
 									<li><a href="https://www.instagram.com/crise_time/" target="_blank" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
 									<li><a href="https://github.com/crisetime"  target="_blank" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-									
+
 								</ul>
 							</section>
 							<p class="copyright">&copy; Leave hive team. Designd by Team hive</p>
