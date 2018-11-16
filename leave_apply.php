@@ -5,7 +5,32 @@ session_start();
 <head><title>Apply Leave | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+	function enable() {
+		isValid = (document.formname.out_of_station.value == unchecked)
+	// Adding additional validation here
+		document.formname.address.disabled = !isValid;
+	}
+
+
+	$(document).ready(function () {
+	    $("#type").change(function () {
+	        var val = $(this).val();
+	        if (val == "commuted") {
+	            $("#date").html("
+							<option value='cs'>M.tech CS</option><option value='is'>M.tech IS</option><option value='sw'>M.tech SW</option>");
+	        }
+					 else  {
+	            $("#sem").html("<option value=''>-Semester or group -</option>");
+	        }
+	    });
+	});
+
+
+	</script>
 <body>
+
 
 <div id="wrapper">
 
@@ -43,8 +68,28 @@ session_start();
                               <option value="restricted">Restricted Leave</option>
                   </select>
 				  <br>
-                  <input type="text" name="contact" placeholder="Contact Number" required=""></br>
-                  <input type="text" name="address" placeholder="Out for (City name)"></br>
+
+
+									<input type="text" name="contact" placeholder="Contact Number" required=""></br>
+
+											<div class="row uniform">
+												<div class="6u 12u$(xsmall)">
+													<!-- <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" /> -->
+													<input type="checkbox" id="out_of_station" name="out_of_station" onKeyUp="enable()" uncheked>
+													<label for="demo-human">Out of station </label>
+												</div>
+												<div class="6u$ 12u$(xsmall)">
+												<input type="text" name="address" placeholder="Out for (City name)" disabled/>
+												</div>
+											</div>
+											<br>
+
+											<div name="cdate" invisible>
+												From : <input type="date" name="from" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" required="">   &nbsp &nbspTo : <input type="date" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" name="to" required=""></br></br>
+
+											</div>
+
+                  <!-- <input type="text" name="address" placeholder="Out for (City name)"></br> -->
                   <textarea rows="5" placeholder="Appliation including reason ,full address etc." name="reason" required=""></textarea></br>
 
                 <ul class="actions">
