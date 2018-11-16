@@ -3,7 +3,25 @@
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-
+<script>
+$(document).ready(function () {
+    $("#class").change(function () {
+        var val = $(this).val();
+        if (val == "1") {
+            $("#sem").html("<option value='cs'>M.tech CS</option><option value='is'>M.tech IS</option><option value='sw'>M.tech SW</option>");
+        } else if (val == "2") {
+            $("#sem").html("<option value='1'>Semester 1</option><option value='3'>Semester 3</option><option value='5'>Semester 5</option>");
+        } else if (val == "3") {
+            $("#sem").html("<option value='3a'>3ird A</option><option value='3b'>3rd B</option><option value='5a'>5th A</option><option value='5b'>5th B</option><option value='7a'>7th A</option><option value='7b'>7th B</option>");
+        }else if (val == "4") {
+            $("#sem").html("<option value='3'>Semester 3</option><option value='5'>Semester 5</option><option value='7'>Semester 7</option>");
+        }
+				 else if (val == "0") {
+            $("#sem").html("<option value=''>-Semester or group -</option>");
+        }
+    });
+});
+</script>
 
 <body>
 
@@ -40,19 +58,19 @@
 <form class="form-control" name="formname" action="logintemp.php" method="post">
 
                  <select name="class" id="class">
-                              <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Select Class -</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MCA</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MBA</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administration</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">human Resources</font></font></option>
+                              <option value="0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Select Class -</font></font></option>
+                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">M.tech</font></font></option>
+                              <option value="2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MCA</font></font></option>
+                              <option value="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">B.tech CSE</font></font></option>
+                              <option value="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">B.tech IT</font></font></option>
                             </select> <br>
 
 <select name="sem" id="sem">
                               <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- Select Semester -</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Manufacturing</font></font></option>
+                              <!-- <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Manufacturing</font></font></option>
                               <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shipping</font></font></option>
                               <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administration</font></font></option>
-                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">human Resources</font></font></option>
+                              <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">human Resources</font></font></option> -->
                             </select>
                             <br>
 
