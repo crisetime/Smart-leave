@@ -28,6 +28,7 @@ session_start();
 	});
 
 
+
 	</script>
 <body>
 
@@ -75,13 +76,17 @@ session_start();
 											<div class="row uniform">
 												<div class="6u 12u$(xsmall)">
 													<!-- <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" /> -->
-													<input type="checkbox" id="out_of_station" name="out_of_station" onKeyUp="enable()" uncheked>
-													<label for="demo-human">Out of station </label>
+													<input type="checkbox" id="out_of_station" name="out_of_station"  >
+													<label for="out_of_station">Out of station </label>
 												</div>
 												<div class="6u$ 12u$(xsmall)">
-												<input type="text" name="address" placeholder="Out for (City name)" disabled/>
+												<input type="text" id="address" placeholder="Out for (City name)" name="address" disabled="" />
 												</div>
 											</div>
+											<script>
+											$('#out_of_station').change(function(){
+   $("#address").prop("disabled", !$(this).is(':checked'));
+}); </script>
 											<br>
 
 											<div name="cdate" invisible>
