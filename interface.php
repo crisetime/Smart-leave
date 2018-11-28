@@ -26,7 +26,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
             <li><a href="interface.php" class="active" >Home</a></li>
             <li><a href="profile.php">Profile</a></li>
             <li><a href="logout.php" >Sign out</a></li>
-			<li><a href="get_remaining_leave.php" >Get Remaining Leave</a></li>
+			<!-- <li><a href="get_remaining_leave.php" >Get Remaining Leave</a></li> -->
           </ul>
         </nav>
 
