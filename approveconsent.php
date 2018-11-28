@@ -10,8 +10,8 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1>User</h1>
-          <p>Welcome to leave hive</p>
+          <h1>Consents</h1>
+
         </header>
 
         <div id="main">
@@ -26,14 +26,32 @@
         </nav>
 
           <!-- Content -->
-            <section id="content" class="main">
-
-
-
-
-            </section>
-
+            <!-- <section id="content" class="main"> -->
+            <!-- </section> -->
         </div>
+
+<br><br><br>
+
+				<table border='1'>
+					<thead>
+				<tr>
+				<th>Name</th>
+				<th>Consent</th>
+		  	</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Ram kishor </td>
+					<td>
+													<input type="checkbox" id="demo-human" name="demo-human" checked="">
+													<label for="demo-human">Ask for Consent</label>
+												</td>
+				</tr>
+			</tbody>
+				</table>
+				<input type="submit" >
+
 
       <footer id="footer">
             <section>
