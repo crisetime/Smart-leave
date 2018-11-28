@@ -45,10 +45,9 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 						<div class="4u"> </div>
 						<div class="2u$" style="color:#b645ef"><a href="history.php">History<span class="image fit"><img src="images/history.svg" alt="view your history" title="View Leave History" /></span></a></div>
 						<div class="2u"> </div>
-						<div class="2u" style="color:cyan"><a href="timetable.php">Time table<span class="image fit"><img src="images/timetable.png" alt="View profile" title="View profile" /></span></a></div>
+						<div class="2u" style="color:cyan"><a href="timetable.php">Time table<span class="image fit"><img src="images/timetable.svg" alt="View profile" title="View profile" /></span></a></div>
 						<div class="4u"> </div>
-						<div class="2u$" style="color:red"><a href="approveconsent.php">Notification<span class="image fit"><img src="images/notification.png" alt="Apply for leave" title="Apply for leave" /></span></a></div>
-
+						<div class="2u$" style="color:red"><a href="approveconsent.php">Notification<span class="image fit"><img src="images/notifications.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
 					</div>
 				</div>
             </section>

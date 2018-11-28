@@ -13,7 +13,6 @@ session_start();
 		document.formname.address.disabled = !isValid;
 	}
 
-
 	/*$(document).ready(function () {
 	    $("#type").change(function () {
 	        var val = $(this).val();
@@ -26,6 +25,8 @@ session_start();
 	        }
 	    });
 	});*/
+
+
 	</script>
 <body>
 
@@ -71,6 +72,7 @@ session_start();
 											<div class="6u 12u$(xsmall)">
 												<input type="checkbox" id="out_of_station" name="out_of_station"  >
 												<label for="out_of_station">Out of station </label>
+
 												</div>
 												<div class="6u$ 12u$(xsmall)">
 												<input type="text" id="address" placeholder="Out for (City name)" name="address" disabled="" />
@@ -78,7 +80,7 @@ session_start();
 											</div>
 											<script>
 											$('#out_of_station').change(function(){
-											$("#address").prop("disabled", !$(this).is(':checked'));
+												$("#address").prop("disabled", !$(this).is(':checked'));
 												}); </script>
 											<br>
 
