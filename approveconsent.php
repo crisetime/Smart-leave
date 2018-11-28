@@ -51,7 +51,7 @@ session_start();
 				{
 						$eid=$row['emp_id'];
 						$fname=$row['fname'];
-						$lname=$row['lname'];			  
+						$lname=$row['lname'];
 				?>
 				<tr>
 					<td><?php echo'$fname $lname'; ?></td>
