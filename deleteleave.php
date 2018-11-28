@@ -1,61 +1,54 @@
-<?php
-session_start();
-?>
 <html>
-<head><title>Home | Leave hive</title>
-	<link rel="stylesheet" href="assets/css/main.css" />
-</head>
+<head><title>Home</title>
+	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
 <body>
 
 <div id="wrapper">
 
         <header id="header">
-          <h1> <?php echo " Hi " .$_SESSION["name"] ?></h1>
-          <p>Welcome to leave hive </p>
-
+          <h1>Delete Leave</h1>
+          <!-- <p>Welcome to leave hive</p> -->
         </header>
 
         <div id="main">
 
-        <nav id="nav">
+          <nav id="nav">
           <ul>
-            <li><a href="interface.php" class="active" >Home</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="logout.php" >Sign out</a></li>
-			<li><a href="get_remaining_leave.php" >Get Remaining Leave</a></li>
+            <li><a href="insertpage.php">Home</a></li>
+            <li><a href="deleteleave.php"  class="active" >Delete Leave</a></li>
+            <li><a href="" >Sign out</a></li>
+
           </ul>
         </nav>
 
           <!-- Content -->
             <section id="content" class="main">
-				<div class="box alt">
-					<div class="row uniform">
+								<h4>Add leave </h4>
+							<form class="form-control" name="formname" action="#" method="post">
 
-						<div class="2u"></div>
-						<div class="2u" style="color:orange">
-						<a href="profile.php">Profile<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a>
-						</div>
+								<input type="text" name="empid" placeholder="Leave Name" required=""></br>
+								<input type="text" name="number" placeholder="Number of leave" required=""></br>
 
-						<div class="4u"></div>
-						<div class="2u$" style="color:#91DC5A">
-						<a href="grant.php">Grant leave<span class="image fit"><img src="images/grant.svg" alt="Apply for leave" title="Apply for leave" /></span></a>
-						</div>
+								<ul class="actions">
+												<li><input type="submit" class="button special" name="submit" value="Submit"></li>
+													<li><input type="reset" value="Reset"></li>
+								</ul>
 
+							</form>
+							<hr>
+							<h4>Employee details </h4>
+								<form class="form-control" actin ="#" method="post">
+							<input type="text" name="Employee Id" /> <br>
 
-						<div class="2u"></div>
-						<div class="2u" style="color:#F7143E">
-						<a href="deleteleave.php">Delete Leaves<span class="image fit"><img src="images/delete.svg" alt="Delete leave" title="Delete leave" /></span></a>
-						</div>
+						<input type="submit" class="button special" value="Submit">
+						</form>
 
-						<div class="4u"></div>
-						<div class="2u$" style="color:#b645ef">
-						<a href="hodhistory.php">History<span class="image fit"><img src="images/history.svg" alt="view leave history" title="View Leave History" /></span></a>
-						</div>
+						</section>
 
-					</div>
-				</div>
-            </section>
 
         </div>
 
