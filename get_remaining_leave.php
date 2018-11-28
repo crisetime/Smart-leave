@@ -21,11 +21,11 @@
 		{
 	?>
 			<tr>
-			<td>Commuted Leave</td>
+			<td>Casual Leave</td>
 			<td><?php echo $row['commuted']; ?></td>
 			</tr>
 			<tr>
-			<td>Earn Leave</td>
+			<td>Earned Leave</td>
 			<td><?php echo $row['earn']; ?></td>
 			</tr>
 			<tr>

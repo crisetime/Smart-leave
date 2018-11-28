@@ -11,7 +11,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 </head>
 <body>
 	<div id="wrapper">
-	
+
 					<header id="header">
 						<h1>Log in </h1>
 						<p>Log in to leave hive</p>
@@ -23,7 +23,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 							<li><a href="index.php" >Home</a></li>
 							<li><a href="#" class="active">Log in</a></li>
 							<li><a href="reg.php" >Sign up</a></li>
-							
+
 						</ul>
 					</nav>
 					<!-- maini section -->
@@ -33,30 +33,27 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 							<section id="content" class="main">
 
 								<form class="form-control" name="formname" action="logintemp.php" method="post">
-									
+
 									<select name="designation" class="demo-categoery" required="">
 										<option value="">Choose designation</option>
-										<!--option value="registrar">Registrar</option-->
-										<option value="hod">H.O.D.</option>
-										<option value="professor">Professor</option>
-										<option value="assistant_professor">Assitant Professor</option>
-										<option value="associate_professor">associate Professor</option>
-										<option value="lecturar">lecturar</option>
-										<option value="g_faculty">Guset faculty</option>
+										<option value="Professor">Professor</option>
+										<option value="Assistant professor">Assitant Professor</option>
+										<option value="Associate professor">Associate Professor</option>
+										<option value="Lecturer">Lecturer</option>
+										<option value="guest faculty">Guest faculty</option>
 										<option value="other">Other</option>
 
 									</select><br>
-
 									<input type="text" name="empid" placeholder="Employee Id" required=""></br>
 									<input type="password" name="password" placeholder="Password" required=""></br>
-									
+
 									<ul class="actions">
 													<li><input type="submit" class="button special" name="submit" value="Submit"></li>
 														<li><input type="reset" value="Reset"></li>
 									</ul>
 
 
-								
+
 								<p>New user? Sign up <a href="reg.php" class="submit">Here</a></p>
 
 								</form>
@@ -75,7 +72,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 							<section>
 								<h2>Contact Us</h2>
 								<dl class="alt">
-									
+
 									<dt>Phone</dt>
 									<dd>(+91)8090 410 264</dd>
 									<dt>Email</dt>
@@ -86,7 +83,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 									<li><a href="https://www.facebook.com/profile.php?id=100003661545540&ref=bookmarks" target="_blank" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
 									<li><a href="https://www.instagram.com/crise_time/" target="_blank" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
 									<li><a href="https://github.com/crisetime"  target="_blank" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-									
+
 								</ul>
 							</section>
 							<p class="copyright">&copy; Leave hive team. Designd by Team hive</p>

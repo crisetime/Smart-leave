@@ -1,64 +1,57 @@
-<?php
-session_start();
-if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
-    header('location:userpage.php');
-}
-?>
 <html>
-<head><title>Home | Leave hive</title>
-	<link rel="stylesheet" href="assets/css/main.css" />
-</head>
+<head><title>Home</title>
+	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
 <body>
 
 <div id="wrapper">
 
         <header id="header">
-          <h1> <?php echo " Hi " .$_SESSION["name"] ?></h1>
-          <p>Welcome to leave hive </p>
+          <h1>Consents</h1>
 
         </header>
 
         <div id="main">
 
-        <nav id="nav">
+          <nav id="nav">
           <ul>
-            <li><a href="interface.php" class="active" >Home</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="logout.php" >Sign out</a></li>
-			<li><a href="get_remaining_leave.php" >Get Remaining Leave</a></li>
+            <li><a href="userpage.php">Home</a></li>
+            <li><a href="profile.php"  class="active" >Profile</a></li>
+            <li><a href="" >Sign out</a></li>
+
           </ul>
         </nav>
 
           <!-- Content -->
-            <section id="content" class="main">
-				<div class="box alt">
-					<div class="row uniform">
-
-						<div class="2u"></div>
-						<div class="2u" style="color:orange">
-						<a href="profile.php">Profile<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a>
-						</div>
-
-						<div class="4u"></div>
-						<div class="2u$" style="color:#91DC5A">
-						<a href="grant.php">Grant leave<span class="image fit"><img src="images/grant.svg" alt="Apply for leave" title="Apply for leave" /></span></a>
-						</div>
-						<div class="2u"></div>
-						<div class="2u" style="color:#F7143E">
-						<a href="deleteleave.php">Delete Leaves<span class="image fit"><img src="images/delete.svg" alt="Delete leave" title="Delete leave" /></span></a>
-						</div>
-
-						<div class="4u"></div>
-						<div class="2u$" style="color:#b645ef">
-						<a href="hodhistory.php">History<span class="image fit"><img src="images/history.svg" alt="view leave history" title="View Leave History" /></span></a>
-						</div>
-
-					</div>
-				</div>
-            </section>
-
+            <!-- <section id="content" class="main"> -->
+            <!-- </section> -->
         </div>
+
+<br><br><br>
+
+				<table border='1'>
+					<thead>
+				<tr>
+				<th>Name</th>
+				<th>Consent</th>
+		  	</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Ram kishor </td>
+					<td>
+													<input type="checkbox" id="demo-human" name="demo-human" checked="">
+													<label for="demo-human">Ask for Consent</label>
+												</td>
+				</tr>
+			</tbody>
+				</table>
+				<input type="submit" >
+
 
       <footer id="footer">
             <section>

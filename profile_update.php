@@ -17,10 +17,10 @@
 		$empid=$_SESSION['emp_id'];
 		$db_desig=$_SESSION['designation'];
 		$db_dept=$_SESSION['department'];
-		
+
 		if( ($db_desig == 'hod'))
 		{
-			
+
 			mysqli_query($con,"UPDATE leave_providers SET fname='$fname',lname='$lname',designation='$desig' WHERE head_id='$empid'");
 			if($password != '')
 			mysqli_query($con,"UPDATE leave_providers SET password='$password' where head_id='$empid'");
@@ -28,33 +28,30 @@
 		else if( ( $desig=='hod'))
 		{
 			$sq="INSERT INTO leave_providers(head_id,fname,lname,department,designation) VALUES ('$empid','$fname','$lname','$db_dept','$desig')";
-		
+
 			$qr=mysqli_query($con,$sq);
 			if($password != '')
 			mysqli_query($con,"UPDATE leave_providers SET password='$t.password' FROM (SELECT password FROM faculty where emp_id='$empid')t where leave_providers.head_id=t.emp_id ");
 
 		}
-		
+
 			$sql = mysqli_query($con,"UPDATE faculty SET fname='$fname',lname='$lname',email_id='$email',designation='$desig' WHERE emp_id='$empid'");
 			if($password != '')
 			$sqll = mysqli_query($con,"UPDATE faculty SET password='$password' where emp_id='$empid'");
 			$sqlll=" DELETE FROM leave_providers WHERE head_id='$empid' ";
 			mysqli_query($con,$sqlll);
 			if($sql)
-			{	
+			{
 				$mssg ="you profile has been sucessfully updated";
 				@$_SESSION['name']=$fname;
 				@$_SESSION['lname']=$lname;
 				@$_SESSION['email_id']=$email;
 				@$_SESSION['designation']=$desig;
 				echo "<script type='text/javascript'>alert('$mssg'); 
-				location.href='".profile.".php';
+				location.href='".'profile'.".php';
 				</script>";	
-			}
-		
-			
+			}			
 	}	
-	
 ?>
 <html>
 <head><title>Update | Leave hive</title>
@@ -92,13 +89,10 @@
 
                   <select name="designation" class="demo-categoery" value="H.O.D.">
                     <option value="<?php echo $_SESSION['designation']; ?>"><?php echo $_SESSION['designation']; ?></option>
-                    <option value="registrar">Registrar</option>
-                    <option value="faculty">Faculty</option>
-                    <option value="hod">H.O.D.</option>
-                    <option value="assistant_professor">Assitant Professor</option>
-                    <option value="associate_professor">associate Professor</option>
-                    <option value="lecturar">lecturar</option>
-                    <option value="g_faculty">Guset faculty</option>
+                    <option value="Assistant professor">Assitant Professor</option>
+                    <option value="Associate professor">Associate Professor</option>
+                    <option value="Lecturar">Lecturer</option>
+                    <option value="guest faculty">Guest faculty</option>
                     <option value="other">Other</option>
 
                   </select><br>
@@ -152,6 +146,3 @@
   </div>
 </body>
 </html>
-
-
-

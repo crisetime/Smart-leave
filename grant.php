@@ -148,7 +148,7 @@ alert("You decided to not cancel the form!");
 						$d2=date_create($l_to);
 						$num=$d1->diff($d2);
 						mysqli_query($conn,"UPDATE remaining_leave set $type = $type-($num->days) WHERE emp_id='$eid' ") ;
-						header("refresh:1,url=grant.php");
+					//	header("refresh:1,url=grant.php");
 						}
 						if(isset($_GET['cancel']))
 						{

@@ -1,6 +1,6 @@
 ﻿<?php
 		session_start();
-		$designation=$_POST['designation'];	
+		$designation=$_POST['designation'];
 		$empid=$_POST['empid'];
 		$headid=$_POST['empid'];
 		$password=$_POST['password'];
@@ -9,21 +9,21 @@
 		{
 				$connect=mysqli_connect("localhost", "root","") or die("Couldn't connect to the database");
 				mysqli_select_db($connect,"e-leavesystem") or die("Couldn't find the database");
-				
+
 				if( ($designation) == 'hod' )
 				{
-					
+
 					$query1=mysqli_query($connect,"SELECT * FROM leave_providers WHERE head_id='$empid' ");
 					$query=mysqli_query($connect,"SELECT * FROM faculty WHERE emp_id='$empid' ");
 					$numrows1=mysqli_num_rows($query1);
 					$numrows=mysqli_num_rows($query);
-					
-					
+
+
 					if($numrows>0 && $numrows1>0  )
-					{     
+					{
 					while($row=mysqli_fetch_assoc($query))
-					{ 	
-						
+					{
+
 						$dbempid=$row['emp_id'];
 						$dbpassword=$row['password'];
 						$dbdesignation=$row['designation'];
@@ -32,17 +32,17 @@
 						$db_lastname=$row['lname'];
 						$db_emailid=$row['email_id'];
 						$dbgender=$row['gender'];
-						
+
 					}
 					while($row1=mysqli_fetch_assoc($query1))
-					{ 	
-						
+					{
+
 						$dbheadid=$row1['head_id'];
 						$dbpassword1=$row1['password'];
 						$dbdesignation1=$row1['designation'];
-						
+
 					}
-					if( ($headid)==$dbheadid && ($password)==($dbpassword1)&& ($designation)==$dbdesignation1 && ($empid) ==$dbempid && ($password)==$dbpassword )
+					if( ($headid)==$dbheadid && ($password)==($dbpassword1)&& ($designation)==$dbdesignation1 && ($empid)==$dbempid && ($password)==$dbpassword )
 					{
 						session_start();
 						@$_SESSION['emp_id']=$dbempid;
@@ -59,20 +59,19 @@
 								window.location.href="login.php";
 								</script>' ;
 					}
-					else  { 
+					else  {
 							$msg= "Incorrect details. Fill correct details";
 							echo "<script> alert('$msg'); location.href='".login.".php'; </script>" ;
 					}
 				}
-				else if( $designation == 'g_faculty'|| ($designation) == 'associate_professor' ||($designation) == 'assistant_professor' || ($designation) == 'Professor'  || $designation == 'lecturar' || $designation == 'other' )
-					{ 
-				        
+				else if( $designation == 'guest faculty'|| ($designation) == 'Associate professor' ||($designation) == 'Assistant professor' || ($designation) == 'Professor'  || $designation == 'Lecturer' || $designation == 'other' )
+					{
 						$query=mysqli_query($connect,"SELECT * FROM faculty WHERE emp_id='$empid' ");
 						if(mysqli_num_rows($query))
-						{     
+						{
 						//while($row=mysqli_fetch_assoc($query))
 						$row=mysqli_fetch_assoc($query);
-						{ 	
+						{
 						$dbempid=$row['emp_id'];
 						$dbpassword=$row['password'];
 						$dbdesignation=$row['designation'];
@@ -96,43 +95,43 @@
 									@$_SESSION['designation']=$row['designation'];
 									@$_SESSION['email_id']=$emailid;
 									@$_SESSION['gender']=$dbgender;
-									header("Location:userpage.php?user=".$dbempid); 
+									header("Location:userpage.php?user=".$dbempid);
 								}
 								else
-									
+
 								{	echo '<script type="text/javascript">';
 									echo ' alert("designation not matched");';
 									echo 'window.location.href="login.php";';
-									echo '</script>' ;    
+									echo '</script>' ;
 								}
 							}
 							else
 							{	echo '<script type="text/javascript">';
 								echo ' alert("Password not matched");';
 								echo 'window.location.href="login.php";';
-								echo '</script>' ;    
+								echo '</script>' ;
 							}
 						}
 						else
 						{	echo '<script type="text/javascript">';
 							echo ' alert("Employee Id does not exist");';
 							echo 'window.location.href="reg.php";';
-							echo '</script>' ;    
+							echo '</script>' ;
 						}
 						}
 						else
-						{	
+						{
 					    echo '<script type="text/javascript">';
 						echo ' alert("User does not exist");';
 						echo 'window.location.href="reg.php";';
-						echo '</script>' ;    
+						echo '</script>' ;
 						}
 					}
 					else
 					{	echo '<script type="text/javascript">';
 						echo ' alert("designation not valid");';
 						echo 'window.location.href="login.php";';
-						echo '</script>' ;    
+						echo '</script>' ;
 					}
 			}
 			else
@@ -140,8 +139,8 @@
 				header("location : login.php");
 				echo '<script type="text/javascript">;
 				alert("Please Enter Employee Id and Password");
-				</script>'; 
-			//echo '</script>' ;   
+				</script>';
+			//echo '</script>' ;
 			}
 		}
 

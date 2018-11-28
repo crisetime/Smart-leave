@@ -65,14 +65,12 @@
 										<div class="12u$">
 										<select class="demo-categoery" name="designation" required="">
 										<option value="">Choose designation</option>
-										<!--option value="registrar">Registrar</option-->
-
-										<option value="professor">Professor</option>
-										<option value="assistant_professor">Assistant Professor</option>
-										<option value="associate_professor">Associate Professor</option>
-										<option value="lecturar">Lecturer</option>
-										<option value="g_faculty">Guset faculty</option>
-										<option value="g_faculty">Other</option>
+										<option value="Professor">Professor</option>
+										<option value="Assistant professor">Assistant Professor</option>
+										<option value="Associate professor">Associate Professor</option>
+										<option value="Lecturer">Lecturer</option>
+										<option value="guest faculty">Guest faculty</option>
+										<option value="other">Other</option>
 										</select>
 										</div>
 											<div class="12u$">
