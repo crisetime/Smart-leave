@@ -12,9 +12,9 @@ $(document).ready(function () {
         } else if (val == "2") {
             $("#sem").html("<option value='mca1'>Semester 1</option><option value='mca3'>Semester 3</option><option value='mca5'>Semester 5</option>");
         } else if (val == "3") {
-            $("#sem").html("<option value='1a'>1st A</option><option value='1b'>1st B</option><option value='3a'>3rd A</option><option value='3b'>3rd B</option><option value='5a'>5th A</option><option value='5b'>5th B</option><option value='7a'>7th A</option><option value='7b'>7th B</option>");
+            $("#sem").html("<option value='3a'>3rd A</option><option value='3b'>3rd B</option><option value='5a'>5th A</option><option value='5b'>5th B</option><option value='7a'>7th A</option><option value='7b'>7th B</option>");
         }else if (val == "4") {
-            $("#sem").html("<option value='it1'>Semester 1</option><option value='it3'>Semester 3</option><option value='it5'>Semester 5</option><option value='7'>Semester 7</option>");
+            $("#sem").html("<option value='it3'>Semester 3</option><option value='it5'>Semester 5</option><option value='7'>Semester 7</option>");
         }
 				 else if (val == "0") {
             $("#sem").html("<option value=''>-Semester or group -</option>");

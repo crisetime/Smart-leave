@@ -44,7 +44,7 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1><?php $user=$_SESSION["name"]; echo $user; ?></h1>
+          <h1><?php $user=$_SESSION["name"]; echo 'Hi '.$user; ?></h1>
           <p>Welcome to leave hive</p>
         </header>
 
@@ -53,7 +53,7 @@
           <nav id="nav">
           <ul>
 		  <?php
-		  if($_SESSION['designation'] == 'hod' ||$_SESSION['designation'] == 'registrar')
+		  if($_SESSION['designation'] == 'admin')
 		  {
 			  ?>
             <li><a href="interface.php">Home</a></li>

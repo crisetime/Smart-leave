@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
     header('location:userpage.php');
@@ -41,6 +42,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 										<option value="Associate professor">Associate Professor</option>
 										<option value="Lecturer">Lecturer</option>
 										<option value="guest faculty">Guest faculty</option>
+										<!--option value="admin">Admin/HOD</option-->
 										<option value="other">Other</option>
 
 									</select><br>

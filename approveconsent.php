@@ -1,9 +1,10 @@
+<?php
+session_start();
+?>
 <html>
 <head><title>Home</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
 
 <body>
 
@@ -20,7 +21,7 @@
           <ul>
             <li><a href="userpage.php">Home</a></li>
             <li><a href="profile.php"  class="active" >Profile</a></li>
-            <li><a href="" >Sign out</a></li>
+            <li><a href="logout.php" >Sign out</a></li>
 
           </ul>
         </nav>
@@ -33,24 +34,43 @@
 <br><br><br>
 
 				<table border='1'>
-					<thead>
+				<thead>
 				<tr>
 				<th>Name</th>
 				<th>Consent</th>
-		  	</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>Ram kishor </td>
-					<td>
-													<input type="checkbox" id="demo-human" name="demo-human" checked="">
-													<label for="demo-human">Ask for Consent</label>
-												</td>
 				</tr>
+				</thead>
+				<tbody>
+			  <?php
+				$conn = mysqli_connect('localhost','root','','e-leavesystem');
+				$sql = "SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave) ";
+				$res=mysqli_query($conn,'SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave)');
+				$rows=mysqli_num_rows($res);
+				if($rows > 0) {
+				while($row = mysqli_fetch_array($res))
+				{
+						$eid=$row['emp_id'];
+						$fname=$row['fname'];
+						$lname=$row['lname'];			  
+				?>
+				<tr>
+					<td><?php echo'$fname $lname'; ?></td>
+					<td>
+						<input type="checkbox" id="demo-human" name="$eid" checked="">
+						<label for="demo-human">Ask for Consent</label>
+					</td>
+				</tr>
+				<?php
+				}
+				}
+				else {
+					echo '<script> alert("No faculty member is available here") </script>';
+					header('location:userpage.php');
+				}
+				?>
 			</tbody>
 				</table>
-				<input type="submit" >
+				<input type="submit" onclick="sendfunction()" name="submit">
 
 
       <footer id="footer">
