@@ -31,39 +31,24 @@ session_start();
             <section id="content" class="main">
 				<div class="box alt">
 					<div class="row uniform">
-					
-						<div class="2u"></div>
+
+						<div class="1u"></div>
 						<div class="2u" style="color:orange">
 						<a href="profile.php">Profile<span class="image fit"><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a>
 						</div>
-						
+
 						<div class="2u"></div>
 						<div class="2u" style="color:#91DC5A">
 						<a href="grant.php">Grant leave<span class="image fit"><img src="images/grant.svg" alt="Apply for leave" title="Apply for leave" /></span></a>
 						</div>
-						
-						
-						<!--div class="3u"></div>
-                        <div class="3u" style="color:red">
-						<a href="" >Cancel Leave<span class="image fit" ><img src="images/cancel.svg" alt="cancel leave" title="Cancel leave" /></span></a>
-						</div>
-						
-						
-						<div class="2u"></div>
-						<div class="2u"  style="color:#FFDA44">
-						<a href="status.php">Status<span class="image fit"><img src="images/status.svg" alt="view your status" title="View your status" /></span></a>
-						</div-->
-						
-					
+
+
 						<div class="2u"></div>
 						<div class="2u" style="color:#b645ef">
 						<a href="hodhistory.php">History<span class="image fit"><img src="images/history.svg" alt="view leave history" title="View Leave History" /></span></a>
 						</div>
-						
-						<!--div class="2u"></div>
-						<div class="2u" style="color:red">
-						<a href="leave_apply.php">Apply for leave<span class="image fit"><img src="images/grant.svg" alt="Apply for leave" title="Apply for leave" /></span></a>
-						</div-->
+
+
 					</div>
 				</div>
             </section>
