@@ -48,7 +48,7 @@
 				{
 
 				$sec='2';
-			if($_SESSION['designation'] == 'hod')
+			if($_SESSION['designation'] == 'admin')
 					header("Refresh: $sec, url=interface.php");
 				else
 					header("Refresh: $sec, url=userpage.php");
@@ -70,7 +70,7 @@
 		else
 		{    $msg="No entry in leave table";
 	          echo "<script type='text/javascript'> alert('$msg');
-					location.href='".userpage.".php';
+					location.href='".'userpage'.".php';
 					</script>";
 
 		}

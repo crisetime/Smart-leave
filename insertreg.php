@@ -51,16 +51,14 @@
 		
 			$sql = "INSERT INTO  faculty (fname,lname,emp_id,gender,department,designation,email_id,password) VALUES ('$fname','$lname','$empid','$sex','$department','$designation','$email','$password')";
 			$res1 = "INSERT INTO remaining_leave (emp_id,commuted,earn,half_pay,special_cl,restricted,vacation,medical) values('$empid',8,15,15,15,2,28,15)";
-			if( $designation === 'hod')	{
-			$res = "INSERT INTO leave_providers(head_id,fname,lname,department,designation,password,gender) values('$empid','$fname','$lname','$department','$designation','$password','$sex')";
-			if( mysqli_query($link,$res)&& mysqli_query($link,$sql) && mysqli_query($link,$res1))
+			//if( $designation === 'admin')	{
+			//$res = "INSERT INTO leave_providers(head_id,fname,lname,department,designation,password,gender) values('$empid','$fname','$lname','$department','$designation','$password','$sex')";
+			if( mysqli_query($link,$sql) && mysqli_query($link,$res1))
 			header("Location:login_sucessful.php");
-			}
 			else
 			{
-			if(mysqli_query($link ,$sql) && mysqli_query($link,$res1))
-			header("Location:login_sucessful.php");
-			else echo " do again" ;
+				header("Location:reg.php");
+			 echo "do again";
 			}
 		}
 		

@@ -18,7 +18,7 @@
 		$db_desig=$_SESSION['designation'];
 		$db_dept=$_SESSION['department'];
 
-		if( ($db_desig == 'hod'))
+		/*if( ($db_desig == 'hod'))
 		{
 
 			mysqli_query($con,"UPDATE leave_providers SET fname='$fname',lname='$lname',designation='$desig' WHERE head_id='$empid'");
@@ -33,7 +33,7 @@
 			if($password != '')
 			mysqli_query($con,"UPDATE leave_providers SET password='$t.password' FROM (SELECT password FROM faculty where emp_id='$empid')t where leave_providers.head_id=t.emp_id ");
 
-		}
+		}*/
 
 			$sql = mysqli_query($con,"UPDATE faculty SET fname='$fname',lname='$lname',email_id='$email',designation='$desig' WHERE emp_id='$empid'");
 			if($password != '')
@@ -80,16 +80,13 @@
 
           <!-- Content -->
             <section id="content" class="main">
-
-
-
-
-                                  <h2>Update Your profile</h2>
-                                   <form class="form-control" name="formname" action="#" method="post">
+                <h2>Update Your profile</h2>
+                    <form class="form-control" name="formname" action="#" method="post">
 
                   <select name="designation" class="demo-categoery" value="H.O.D.">
                     <option value="<?php echo $_SESSION['designation']; ?>"><?php echo $_SESSION['designation']; ?></option>
-                    <option value="Assistant professor">Assitant Professor</option>
+					<option value="Professor">Professor</option>
+                    <option value="Assistant professor">Assistant Professor</option>
                     <option value="Associate professor">Associate Professor</option>
                     <option value="Lecturar">Lecturer</option>
                     <option value="guest faculty">Guest faculty</option>
