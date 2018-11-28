@@ -66,14 +66,12 @@ $(document).ready(function () {
 				else if(document.formname.class.value=='4')
 				{	
 					var semval = $("#sem").val();
-					if( semval == "it1")
-					window.open('tmtl/it1.pdf','_blank');
 					if( semval == "it3")
-					window.open('tmtl/it3.pdf','_blank');
+					window.open('http://172.31.36.37/time/csed/btechit4.php','_blank');
 					if( semval == "it5")
-					window.open('tmtl/it5.pdf','_blank');
+					window.open('http://172.31.36.37/time/csed/btechit6.php','_blank');
 					if( semval == "it7")
-					window.open('tmtl/it7.pdf','_blank');
+					window.open('http://172.31.36.37/time/csed/btechit8.php','_blank');
 				}
 				else document.write("Undefined course selected!");
             }
