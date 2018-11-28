@@ -4,8 +4,6 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
     header('location:index.php');
 }
 ?>
-
-
 <html>
 <head><title>Home | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
@@ -16,7 +14,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 
         <header id="header">
           <h1> <?php echo " Hi " .$_SESSION["name"] ?></h1>
-          <p>Welcome to leave hive  <?php echo $_SESSION['name'] ?> </p>
+          <p>Welcome to leave hive </p>
 
         </header>
 
@@ -47,7 +45,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 						<div class="2u"> </div>
 						<div class="2u" style="color:cyan"><a href="timetable.php">Time table<span class="image fit"><img src="images/timetable.svg" alt="View profile" title="View profile" /></span></a></div>
 						<div class="4u"> </div>
-						<div class="2u$" style="color:red"><a href="approveconsent.php">Notification<span class="image fit"><img src="images/notifications.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
+						<div class="2u$" style="color:red"><a href="approveconsent.php">Notification<span class="image fit"><img src="images/notifications.svg" alt="Consents" title="View Consents" /></span></a></div>
 					</div>
 				</div>
             </section>

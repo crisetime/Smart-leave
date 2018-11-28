@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
+    header('location:index.php');
+}
 ?>
 <html>
 <head><title>Home</title>
@@ -41,17 +44,21 @@ session_start();
 				</tr>
 				</thead>
 				<tbody>
-			  <?php
+				<?php
 				$conn = mysqli_connect('localhost','root','','e-leavesystem');
-				$sql = "SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave) ";
-				$res=mysqli_query($conn,'SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave)');
+				//$sql = "SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave) ";
+				//$res=mysqli_query($conn,'SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave)');
+				$eid=$_SESSION['emp_id'];
+				$res=mysqli_query($conn,"SELECT DISTINCT req_id from request_for_consent where emp_id='$eid'");
 				$rows=mysqli_num_rows($res);
 				if($rows > 0) {
 				while($row = mysqli_fetch_array($res))
 				{
-						$eid=$row['emp_id'];
-						$fname=$row['fname'];
-						$lname=$row['lname'];			  
+						$rid=$row['req_id'];
+						$res1=mysqli_query($conn,"select fname,lname from faculty where emp_id='$rid' ");
+						$row1=mysqli_fetch_array($res1);
+						$fname=$row1['fname'];
+						$lname=$row1['lname'];			  
 				?>
 				<tr>
 					<td><?php echo'$fname $lname'; ?></td>
@@ -64,8 +71,8 @@ session_start();
 				}
 				}
 				else {
+					header("refresh:1,url=userpage.php");
 					echo '<script> alert("No faculty member is available here") </script>';
-					header('location:userpage.php');
 				}
 				?>
 			</tbody>
@@ -95,18 +102,11 @@ session_start();
                 <li><a href="https://www.facebook.com/profile.php?id=100003661545540&ref=bookmarks" target="_blank" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
                 <li><a href="https://www.instagram.com/crise_time/" target="_blank" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
                 <li><a href="https://github.com/crisetime"  target="_blank" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-
               </ul>
             </section>
             <p class="copyright">&copy; Leave hive team. Designd by Vikrant</p>
           </footer>
 
   </div>
-
-
 </body>
-
-
-
-
 </html>
