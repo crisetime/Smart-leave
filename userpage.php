@@ -1,8 +1,9 @@
 <?php
 session_start();
-if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
+if(empty($_SESSION['emp_id']) || empty($_SESSION['name']))
     header('location:index.php');
-}
+if(!empty($_SESSION['emp_id']) && $_SESSION['designation']=='admin')
+	header('location:interface.php');
 ?>
 <html>
 <head><title>Home | Leave hive</title>
