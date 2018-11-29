@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))
-{
-	if($_SESSION['designation']=='admin')
-	header('interface.php');
-	else header('userpage.php');
-}
+if(empty($_SESSION['emp_id']))
+	header('location:admin.php');
+	
+if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['designation']!='admin')
+	header('location:userpage.php'); 
+
 function confirm($eid,$type)
 {
 

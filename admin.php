@@ -1,15 +1,12 @@
 <?php
 session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
-    {
 	if($_SESSION['designation']=='admin')
 		header('location:interface.php');
 	else
 	{ header('location:userpage.php'); }
-	}
 }
 ?>
-
 <html>
 <head><title>Log in|Leave hive</title>
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -42,7 +39,6 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 </body>
 </html>
 <?php
-echo "";
 $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
     // Check connection
     if($link === false)
@@ -57,10 +53,8 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 	$sql = "SELECT * FROM leave_providers WHERE head_id='$headid' AND password='$passwrd' ";
 	$res=mysqli_query($link,$sql);
 	$numrow=mysqli_num_rows($res);
-	echo $numrow;
 	if($numrow > 0)
 	{
-		
 		$row=mysqli_fetch_assoc($res);
 		session_start();
 		@$_SESSION['emp_id']=$row['head_id'];
@@ -70,14 +64,15 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 		@$_SESSION['department']=$row['department'];
 		@$_SESSION['designation']=$row['designation'];
 		@$_SESSION['gender']=$row['gender'];
+		header('Location:interface.php');
 		$mssg='Login successful';
 		echo '<script> alert("mssg"); </script>';
-		header('Location:interface.php');
+		
 	}
 	else
 	{
-		//header("refresh:1,url=admin.php");
-		echo "Invalid Credentials!!!";
+		header("refresh:1,url=admin.php");
+		echo '<script> alert("Invalid Credentials!!!"); </sceript>';
 	}
 
 }
