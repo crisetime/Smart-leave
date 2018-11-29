@@ -7,7 +7,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 ?>
 
 <html>
-<head><title>Log in|Leave hive</title>
+<head><title>Log in | Leave hive</title>
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
