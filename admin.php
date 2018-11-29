@@ -1,10 +1,11 @@
 <?php
+session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
     { 
-	if($_SESSION['designamtion']=='admin')
+	if($_SESSION['designantion']=='admin')
 		header('location:interface.php');
 	else
-	{ echo "hdsjh" ;header('interface:login.php'); }
+	{ echo "hdsjh" ;header('userpage.php'); }
 	}
 }
 ?>
