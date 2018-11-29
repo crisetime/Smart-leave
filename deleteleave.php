@@ -1,5 +1,5 @@
 <html>
-<head><title>Home</title>
+<head><title>Leave | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -10,7 +10,7 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1>Delete Leave</h1>
+          <h1>Leaves</h1>
           <!-- <p>Welcome to leave hive</p> -->
         </header>
 
