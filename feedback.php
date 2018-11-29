@@ -1,5 +1,5 @@
 <html>
-<head><title>Home</title>
+<head><title>Feedback | leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -10,8 +10,8 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1>User</h1>
-          <p>Welcome to leave hive</p>
+          <h1>Feedback</h1>
+          <p>Your feedback is important to us</p>
         </header>
 
         <div id="main">

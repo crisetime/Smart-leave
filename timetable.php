@@ -1,5 +1,5 @@
 <html>
-<head><title>Time table</title>
+<head><title>Time table | leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

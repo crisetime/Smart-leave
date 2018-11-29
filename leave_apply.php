@@ -35,7 +35,7 @@ session_start();
 
         <header id="header">
           <h1><?php echo $_SESSION['name'] ?></h1>
-          <p>Welcome to leave hive</p>
+          <p>Apply leave here</p>
         </header>
 
         <div id="main">

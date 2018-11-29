@@ -12,7 +12,7 @@
 	{
 	die("ERROR: Could not connect. " . mysqli_connect_error());
 	header("Location: userpage.php");
-    } 
+    }
 	else
 	{
 		$empid=$_SESSION['emp_id'];
@@ -48,16 +48,16 @@
 			<td>Vacational</td>
 			<td><?php echo $row['vacation']; ?></td>
 			</tr-->
-	<?php 
+	<?php
 		}
 	}
-	mysqli_close($link);	
-	}	
+	mysqli_close($link);
+	}
 ?>
 <html>
-			
+
 	<head>
-		<title>remaining leave</title>
+		<title>Remaining leave | leave hive</title>
 		<link rel="stylesheet" href="assets/css/main.css" /></head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
@@ -99,6 +99,3 @@
 			</div>
 		</body>
 </html>
-		
-		
-			
