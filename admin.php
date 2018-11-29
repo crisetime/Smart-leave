@@ -1,11 +1,10 @@
 <?php
-session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
     { 
 	if($_SESSION['designamtion']=='admin')
 		header('location:interface.php');
 	else
-	header('location:userpage.php');
+	{ echo "hdsjh" ;header('interface:login.php'); }
 	}
 }
 ?>
@@ -27,7 +26,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 						<!-- Content -->
 							<section id="content" class="main">
 
-								<form class="form-control" name="formname" action="" method="post">
+								<form class="form-control" name="formname" action="#" method="post">
 									<input type="text" name="empid" placeholder="Admin Name" required=""></br>
 									<input type="password" name="password" placeholder="Admin Password" required=""></br>
 
@@ -56,8 +55,10 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 	$sql = "SELECT * FROM leave_providers WHERE head_id='$headid' AND password='$passwrd' ";
 	$res=mysqli_query($link,$sql);
 	$numrow=mysqli_num_rows($res);
+	echo $numrow;
 	if($numrow > 0)
 	{
+		echo "acb";
 		$row=mysqli_fetch_assoc($res);
 		session_start();
 		@$_SESSION['emp_id']=$row['head_id'];
