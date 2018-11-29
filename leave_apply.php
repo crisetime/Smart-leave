@@ -67,7 +67,7 @@ session_start();
                               <option value="restricted">Restricted Leave</option>
                   </select>
 				  <br>
-									<input type="text" name="contact" placeholder="Contact Number" required=""></br>
+									<input type="text" name="contact" placeholder="Contact Number" pattern="[6-9]{1}[0-9]{9}" required=""></br>
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="checkbox" id="out_of_station" name="out_of_station"  >
@@ -113,7 +113,7 @@ session_start();
               <h2>Contact Us</h2>
               <dl class="alt">
 
-                <dt>Phone</dt> 
+                <dt>Phone</dt>
                 <dd>(+91)8090 410 264</dd>
                 <dt>Email</dt>
                 <dd><a href="mail.google.com/">Vikrant.mnnit00@gmail.com</a></dd>
