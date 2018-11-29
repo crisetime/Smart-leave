@@ -5,7 +5,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 	if($_SESSION['designation']=='admin')
 		header('location:interface.php');
 	else
-	{ header('userpage.php'); }
+	{ header('location:userpage.php'); }
 	}
 }
 ?>
@@ -60,7 +60,7 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 	echo $numrow;
 	if($numrow > 0)
 	{
-		echo "acb";
+		
 		$row=mysqli_fetch_assoc($res);
 		session_start();
 		@$_SESSION['emp_id']=$row['head_id'];
