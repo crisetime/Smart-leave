@@ -1,7 +1,12 @@
 <?php
 session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
-    header('location:userpage.php');
+    { 
+	if($_SESSION['designamtion']=='admin')
+		header('location:interface.php');
+	else
+	header('location:userpage.php');
+	}
 }
 ?>
 
@@ -50,10 +55,10 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 	$passwrd=$_POST['password'];
 	$sql = "SELECT * FROM leave_providers WHERE head_id='$headid' AND password='$passwrd' ";
 	$res=mysqli_query($link,$sql);
-	$numrow=mysql_num_rows($link,$res);
+	$numrow=mysqli_num_rows($res);
 	if($numrow > 0)
 	{
-		$row=mysql_fetch_assoc($res);
+		$row=mysqli_fetch_assoc($res);
 		session_start();
 		@$_SESSION['emp_id']=$row['head_id'];
 		@$_SESSION['name']=$row['fname'];
@@ -68,7 +73,7 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 	}
 	else
 	{
-		header("refresh:1,url=admin.php");
+		//header("refresh:1,url=admin.php");
 		echo "Invalid Credentials!!!";
 	}
 	
