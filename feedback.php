@@ -21,7 +21,7 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="feedback.php"  class="active">Feedback</a></li>
             <li><a href="about.html" >About us</a></li>
-         
+
 
           </ul>
         </nav>
@@ -33,34 +33,34 @@
                   <form name="formname" action="insertfeedback.php" method="post">
                     <div class="row uniform">
                     </br>
-                    
+
                     <div class="12u$">
                     <input type="text" name="name"  placeholder="Name " required>
                     </div>
                     <div class="12u$">
-                    <input type="text" name="contact"  placeholder="Contact no" required>
+                    <input type="text" name="contact"  placeholder="Contact no" pattern="[6-9]{1}[0-9]{9}" maxlength="10" required>
                     </div>
 
                     <br>
                     <div class="12u$">
-                    <select  class="demo-categoery" name="category">
+                    <select  class="demo-categoery" name="category" required>
                     <option value="">Choose Categoery</option>
                     <option value="suggestion">Suggestion</option>
                     <option value="complain">Complain</option>
-                   
+
                     <option value="Other">Other</option>
                     </select>
                     </div>
-                      
+
                     <div class="12u$" >
-                    <textarea name="feedback" placeholder="Your Feedback!" rows="5"></textarea>
+                    <textarea name="feedback" placeholder="Your Feedback!" rows="5" required></textarea>
                     </div>
-                    
+
                     <div class="12u$">
-                    <input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" >                  
+                    <input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" >
                     <input type="reset">
                     <br>
-                   
+
                     </div>
                   </div>
                   </form>
