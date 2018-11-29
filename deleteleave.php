@@ -19,7 +19,7 @@
           <nav id="nav">
           <ul>
             <li><a href="interface.php">Home</a></li>
-            <li><a href="deleteleave.php"  class="active" >Delete Leave</a></li>
+            <li><a href="deleteleave.php"  class="active" >Leave</a></li>
             <li><a href="" >Sign out</a></li>
 
           </ul>
