@@ -22,7 +22,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 						<span class="logo"><img src="images/logo.png" height="100px" alt=""/></span>
 						<!-- <h1>Leave Hive</h1> -->
 						<p>To make life easier
-						  Built by Team Hive </p>
+						  built by Team Hive </p>
 					</header>
 
 				<!-- Nav -->
