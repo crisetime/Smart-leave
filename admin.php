@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
-    { 
+    {
 	if($_SESSION['designation']=='admin')
 		header('location:interface.php');
 	else
@@ -42,7 +42,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 </body>
 </html>
 <?php
-echo "qwertyuiop";
+echo "";
 $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
     // Check connection
     if($link === false)
@@ -79,7 +79,7 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 		//header("refresh:1,url=admin.php");
 		echo "Invalid Credentials!!!";
 	}
-	
+
 }
 
 ?>
