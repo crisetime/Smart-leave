@@ -2,10 +2,10 @@
 session_start();
 if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
     { 
-	if($_SESSION['designantion']=='admin')
+	if($_SESSION['designation']=='admin')
 		header('location:interface.php');
 	else
-	{ echo "hdsjh" ;header('userpage.php'); }
+	{ header('userpage.php'); }
 	}
 }
 ?>
@@ -42,6 +42,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 </body>
 </html>
 <?php
+echo "qwertyuiop";
 $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
     // Check connection
     if($link === false)
