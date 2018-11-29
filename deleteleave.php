@@ -34,8 +34,8 @@
 								<input type="text" name="number" placeholder="Number of leave" required=""></br>
 
 								<ul class="actions">
-												<li><input type="submit" class="button special" name="submit"  value="Submit"></li>
-													<li><input type="reset" value="Reset"></li>
+												<li><input type="submit" class="button special" name="submit" style="background-color:blue; opacity:.8" value="Submit"></li>
+													<li><input type="reset" value="Reset" ></li>
 								</ul>
 
 							</form>
@@ -44,7 +44,7 @@
 								<form class="form-control" actin ="#" method="post">
 							<input type="text" name="Employee Id" placeholder="Employee Id" /> <br>
 
-						<input type="submit" class="button special" style="background-color:red; " value="Delete">
+						<input type="submit" class="button special" style="background-color:red;opacity:.9" value="Delete">
 						</form>
 
 						</section>
