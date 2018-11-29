@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(empty($_SESSION['emp_id']))
+	header('location:admin.php');
+
+if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['designation']!='admin')
+	header('location:userpage.php'); 
+?>
+
+
 <html>
 <head><title>Leave | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
