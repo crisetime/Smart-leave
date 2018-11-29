@@ -47,7 +47,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 						</div>
 						<div class="2u"></div>
 						<div class="2u" style="color:#F7143E">
-						<a href="deleteleave.php">Delete Leaves<span class="image fit"><img src="images/delete.svg" alt="Delete leave" title="Delete leave" /></span></a>
+						<a href="deleteleave.php">Leaves<span class="image fit"><img src="images/delete.svg" alt="Delete leave" title="Delete leave" /></span></a>
 						</div>
 
 						<div class="4u"></div>
