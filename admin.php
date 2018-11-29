@@ -4,7 +4,7 @@ if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
 	if($_SESSION['designation']=='admin')
 		header('location:interface.php');
 	else
-	{ header('location:userpage.php'); }
+	{  header('location:userpage.php'); }
 }
 ?>
 <html>
@@ -67,7 +67,7 @@ $link = mysqli_connect("localhost", "root", "", "e-leavesystem");
 		header('Location:interface.php');
 		$mssg='Login successful';
 		echo '<script> alert("mssg"); </script>';
-		
+
 	}
 	else
 	{
