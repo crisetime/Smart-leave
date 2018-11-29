@@ -1,8 +1,6 @@
-
 <?php 
   session_start();
 ?> 
-
 <html>
 <head><title>Profile | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>

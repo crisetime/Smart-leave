@@ -8,16 +8,14 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 <head><title>Home</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 <body>
-
 <div id="wrapper">
 
         <header id="header">
-          <h1>Consents</h1>
-
+        <h1>Consent Requests</h1>
+		<p><?php echo 'Dear '.$_SESSION['name'];?></p>
+		 <br><p>The Following members have sent you the request to take their responsibilities during the leave duration.</p>
         </header>
-
         <div id="main">
 
           <nav id="nav">
@@ -35,12 +33,14 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
         </div>
 
 <br><br><br>
-
+				<form action="#" method="post" >
 				<table border='1'>
 				<thead>
 				<tr>
 				<th>Name</th>
 				<th>Consent</th>
+				<th>From</th>
+				<th>To</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -49,23 +49,37 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 				//$sql = "SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave) ";
 				//$res=mysqli_query($conn,'SELECT * FROM (select emp_id,fname,lname from faculty) minus (select emp_id,fname,lname from apply_for_leave)');
 				$eid=$_SESSION['emp_id'];
-				$res=mysqli_query($conn,"SELECT DISTINCT req_id from request_for_consent where emp_id='$eid'");
+				$res=mysqli_query($conn,"SELECT DISTINCT req_id from request_for_consent where emp_id='$eid' AND status='no'");
 				$rows=mysqli_num_rows($res);
 				if($rows > 0) {
-				while($row = mysqli_fetch_array($res))
+					
+				while($row = mysqli_fetch_assoc($res))
 				{
 						$rid=$row['req_id'];
-						$res1=mysqli_query($conn,"select fname,lname from faculty where emp_id='$rid' ");
-						$row1=mysqli_fetch_array($res1);
+						$res1=mysqli_query($conn,"select fname,lname,leave_from,leave_to from apply_for_leave NATURAL JOIN faculty where emp_id='$rid' and consent='false' ");
+	
+						$row1=mysqli_num_rows($res1);
+						if( $row1 == '0')
+						{
+							header("refresh:1,url=userpage.php");
+							echo '<script> alert("No one has asked for the consent.") </script>';
+						}
+						else {
+							$row1=mysqli_fetch_array($res1);
 						$fname=$row1['fname'];
-						$lname=$row1['lname'];			  
+						$lname=$row1['lname'];	
+						$from=$row1['leave_from'];
+						$to=$row1['leave_to'];
+						}
 				?>
 				<tr>
-					<td><?php echo'$fname $lname'; ?></td>
+					<td><?php echo $fname; ?></td>
 					<td>
-						<input type="checkbox" id="demo-human" name="$eid" checked="">
+						<input type="checkbox" id="req" name="req[]" value="<?=$rid ?>" checked="">
 						<label for="demo-human">Ask for Consent</label>
-					</td>
+					<td><?php echo $from; ?></td>
+					<td><?php echo $to; ?></td>
+					<td>
 				</tr>
 				<?php
 				}
@@ -77,8 +91,8 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 				?>
 			</tbody>
 				</table>
-				<input type="submit" onclick="sendfunction()" name="submit">
-
+				<input type="submit" name="submit" value="Agreed">
+				</form>
 
       <footer id="footer">
             <section>
@@ -110,3 +124,19 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
   </div>
 </body>
 </html>
+<?php
+		$conn = mysqli_connect('localhost','root','','e-leavesystem');
+			if(isset($_POST['req']))
+			{	$name = $_POST['req'];
+				foreach ($name as $req){ 
+				echo $req;
+			}
+			$sql= ' UPDATE request_for_consent SET status="yes" WHERE emp_id="$_SESSION["emp_id"]" AND req_id="$req" AND status="no" ' ;
+			$sql1='UPDATE apply_for_leave SET consent="$_SESSION["emp_id"]" WHERE emp_id="$req" ' ;
+			$res=mysqli_query($conn,$sql);
+			$res1=mysqli_query($conn,$sql1);
+			header("refresh:1,url=approveconsent.php");	
+			echo "Great!confirmed to takes responsibility";
+			}
+
+?>

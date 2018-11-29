@@ -79,11 +79,5 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
           </footer>
 
   </div>
-
-
 </body>
-
-
-
-
 </html>

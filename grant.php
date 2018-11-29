@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))
+{
+	if($_SESSION['designation']=='admin')
+	header('interface.php');
+	else header('userpage.php');
+}
 function confirm($eid,$type)
 {
 
@@ -82,7 +88,7 @@ alert("You decided to not cancel the form!");
 					<?php
 					$conn = mysqli_connect('localhost','root','','e-leavesystem');
 					$dept=$_SESSION['department'];
-					$sql = "SELECT * FROM apply_for_leave WHERE status='pending' AND department='$dept' AND emp_id NOT IN (SELECT DISTINCT head_id FROM leave_providers WHERE designation='hod') ";
+					$sql = "SELECT * FROM apply_for_leave WHERE status='pending' AND consent!='false' AND department='$dept' AND emp_id NOT IN (SELECT DISTINCT head_id FROM leave_providers WHERE designation='admin') ";
 					$res=mysqli_query($conn,$sql);
 
 					while( $row = mysqli_fetch_array($res))
