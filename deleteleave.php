@@ -58,10 +58,10 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 
 							<hr>
 							<h4>Employee details </h4>
-								<form class="form-control" actin ="#" method="post">
-							<input type="text" name="Employee Id" placeholder="Employee Id" /> <br>
+								<form class="form-control" action ="insert_leave.php" method="post">
+							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>
 
-						<input type="submit" class="button special" style="background-color:red;opacity:.9" value="Delete">
+						<input type="submit" name="submit1" class="button special" style="background-color:red;opacity:.9" value="Delete">
 						</form>
 
 
