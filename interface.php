@@ -1,12 +1,14 @@
 <?php
 session_start();
-if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
-    if($_SESSION['designation']=='admin')
-		header('location:interface.php');
-	else
-	{ echo "hdsjh" ;header('userpage.php'); 
-	}
-}
+if(empty($_SESSION['emp_id']))
+	header('location:admin.php');
+	
+//if(!empty($_SESSION['emp_id']) || !empty($_SESSION['name'])){
+   // if($_SESSION['designation']=='admin')
+	//	header('location:interface.php');
+	//else
+	//{ echo "hdsjh" ; header('location:userpage.php'); 
+//	}
 ?>
 <html>
 <head><title>Home | Leave hive</title>
