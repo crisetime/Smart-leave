@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 if(empty($_SESSION['emp_id']))
@@ -7,6 +8,8 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 	header('location:userpage.php'); 
 ?>
 
+=======
+>>>>>>> d13d8c165440943dd0e1949f02ac645a3a57453c
 
 <html>
 <head><title>Leave | Leave hive</title>
@@ -30,7 +33,7 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
           <ul>
             <li><a href="interface.php">Home</a></li>
             <li><a href="deleteleave.php"  class="active" >Leave</a></li>
-            <li><a href="" >Sign out</a></li>
+            <li><a href="logout.php" >Sign out</a></li>
 
           </ul>
         </nav>
@@ -44,16 +47,23 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 								<input type="text" name="number" placeholder="Number of leave" required=""></br>
 
 								<ul class="actions">
-												<li><input type="submit" class="button special" name="submit"  value="Submit"></li>
-													<li><input type="reset" value="Reset"></li>
+												<li><input type="submit" class="button special" name="submit" style="background-color:blue; opacity:.8" value="Submit"></li>
+													<li><input type="reset" value="Reset" ></li>
 								</ul>
 
 							</form>
 							<hr>
 							<h4>Employee details </h4>
+<<<<<<< HEAD
 								<form class="form-control" action ="insert_leave.php" method="post">
 							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>
 						<input type="submit" name="submit1" class="button special" style="background-color:red; " value="Delete">
+=======
+								<form class="form-control" actin ="#" method="post">
+							<input type="text" name="Employee Id" placeholder="Employee Id" /> <br>
+
+						<input type="submit" class="button special" style="background-color:red;opacity:.9" value="Delete">
+>>>>>>> d13d8c165440943dd0e1949f02ac645a3a57453c
 						</form>
 
 						</section>

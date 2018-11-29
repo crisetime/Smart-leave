@@ -47,11 +47,11 @@
 				@$_SESSION['lname']=$lname;
 				@$_SESSION['email_id']=$email;
 				@$_SESSION['designation']=$desig;
-				echo "<script type='text/javascript'>alert('$mssg'); 
+				echo "<script type='text/javascript'>alert('$mssg');
 				location.href='".'profile'.".php';
-				</script>";	
-			}			
-	}	
+				</script>";
+			}
+	}
 ?>
 <html>
 <head><title>Update | Leave hive</title>
@@ -63,8 +63,7 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1>User</h1>
-          <p>Welcome to leave hive</p>
+          	<h1>Hi <?php echo $_SESSION['name'];?></h1>
         </header>
 
         <div id="main">
