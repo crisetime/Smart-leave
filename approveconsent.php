@@ -5,7 +5,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 }
 ?>
 <html>
-<head><title>Consent | leave hive</title>
+<head><title>Home</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <body>
@@ -52,12 +52,12 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 				$res=mysqli_query($conn,"SELECT DISTINCT req_id from request_for_consent where emp_id='$eid' AND status='no'");
 				$rows=mysqli_num_rows($res);
 				if($rows > 0) {
-
+					
 				while($row = mysqli_fetch_assoc($res))
 				{
 						$rid=$row['req_id'];
 						$res1=mysqli_query($conn,"select fname,lname,leave_from,leave_to from apply_for_leave NATURAL JOIN faculty where emp_id='$rid' and consent='false' ");
-
+	
 						$row1=mysqli_num_rows($res1);
 						if( $row1 == '0')
 						{
@@ -67,7 +67,7 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 						else {
 							$row1=mysqli_fetch_array($res1);
 						$fname=$row1['fname'];
-						$lname=$row1['lname'];
+						$lname=$row1['lname'];	
 						$from=$row1['leave_from'];
 						$to=$row1['leave_to'];
 						}
@@ -128,14 +128,14 @@ if(empty($_SESSION['emp_id']) || empty($_SESSION['name'])){
 		$conn = mysqli_connect('localhost','root','','e-leavesystem');
 			if(isset($_POST['req']))
 			{	$name = $_POST['req'];
-				foreach ($name as $req){
+				foreach ($name as $req){ 
 				echo $req;
 			}
 			$sql= ' UPDATE request_for_consent SET status="yes" WHERE emp_id="$_SESSION["emp_id"]" AND req_id="$req" AND status="no" ' ;
 			$sql1='UPDATE apply_for_leave SET consent="$_SESSION["emp_id"]" WHERE emp_id="$req" ' ;
 			$res=mysqli_query($conn,$sql);
 			$res1=mysqli_query($conn,$sql1);
-			header("refresh:1,url=approveconsent.php");
+			header("refresh:1,url=approveconsent.php");	
 			echo "Great!confirmed to takes responsibility";
 			}
 

@@ -36,7 +36,7 @@ $link=mysqli_connect("localhost","root","","e-leavesystem")or die("Couldn't conn
 
         <header id="header">
           <h1><?php echo $_SESSION['name'] ?></h1>
-          <p>Apply leave here</p>
+          <p>Welcome to leave hive</p>
         </header>
 
         <div id="main">
@@ -68,8 +68,7 @@ $link=mysqli_connect("localhost","root","","e-leavesystem")or die("Couldn't conn
                               <option value="restricted">Restricted Leave</option>
                   </select>
 				  <br>
-									<input type="text" name="contact" placeholder="Contact Number" pattern="[6-9]{1}[0-9]{9}" maxlength="10" required=""></br>
-
+									<input type="text" name="contact" placeholder="Contact Number" required=""></br>
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="checkbox" id="out_of_station" name="out_of_station"  >

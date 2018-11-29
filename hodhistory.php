@@ -5,11 +5,11 @@
 	{
 		echo "Unable to connect to database,Try after some time ";
 		header("location:#");
-	}
+	}	
 ?>
 <html>
 	<head>
-		<title>History | leave hive</title>
+		<title>applied leaves</title>
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -45,11 +45,11 @@
 										</thead>
 											<tbody style="color:gray">
 								<!--tr>
-										<form  method="get">
+										<form  method="get">					
 											<input type="hidden" name="empid" value="<?php echo $row['emp_id']; ?>" />
 											<input type="hidden" name="type" value="<?php echo $row['leave_type']; ?>" />
 											<input type="hidden" name="from" value="<?php echo $l_from; ?>" />
-											<input type="submit" name="to" value="<?php echo $l_to;?>" />
+											<input type="submit" name="to" value="<?php echo $l_to;?>" /> 
 											<input type="hidden" name="status" value="<?php echo $status; ?>" />
 										</form>
 									</tr-->
@@ -113,5 +113,5 @@
          </footer>
 		</div>
 	</body>
-
+		
 		</html>

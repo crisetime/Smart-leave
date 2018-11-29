@@ -2,13 +2,13 @@
 session_start();
 if(empty($_SESSION['emp_id']))
 	header('location:admin.php');
-
+	
 if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['designation']!='admin')
-	header('location:userpage.php');
-
+	header('location:userpage.php'); 
+	
 ?>
 <html>
-<head><title>Admin panel | leave hive</title>
+<head><title>Home | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

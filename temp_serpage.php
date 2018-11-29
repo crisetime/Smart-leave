@@ -18,10 +18,9 @@
 
           <nav id="nav">
           <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="feedback.php"  class="active">Feedback</a></li>
-            <li><a href="about.html" >About us</a></li>
-         
+            <li><a href="userpage.php" class="active" >Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="" >Sign out</a></li>
 
           </ul>
         </nav>
@@ -30,41 +29,26 @@
             <section id="content" class="main">
 
 
-                  <form name="formname" action="insertfeedback.php" method="post">
-                    <div class="row uniform">
-                    </br>
-                    
-                    <div class="12u$">
-                    <input type="text" name="name"  placeholder="Name " required>
-                    </div>
-                    <div class="12u$">
-                    <input type="text" name="contact"  placeholder="Contact no" required>
-                    </div>
 
-                    <br>
-                    <div class="12u$">
-                    <select  class="demo-categoery" name="category">
-                    <option value="">Choose Categoery</option>
-                    <option value="suggestion">Suggestion</option>
-                    <option value="complain">Complain</option>
-                   
-                    <option value="Other">Other</option>
-                    </select>
-                    </div>
-                      
-                    <div class="12u$" >
-                    <textarea name="feedback" placeholder="Your Feedback!" rows="5"></textarea>
-                    </div>
-                    
-                    <div class="12u$">
-                    <input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" >                  
-                    <input type="reset">
-                    <br>
-                   
-                    </div>
-                  </div>
-                  </form>
-           </section>
+
+								<div class="box alt">
+									<div class="row uniform">
+
+										<!-- <div class="4u" style="color:orange"><a href="profile.php">Profile<span ><img src="images/profile.svg" alt="View profile" title="View profile" /></span></a></div>
+										<div class="4u" style="color:#91DC5A"><a href="leave_apply.php">Apply leave<span ><img src="images/apply.svg" alt="Apply for leave" title="Apply for leave" /></span></a></div>
+										<div class="4u" style="color:red"><a href="" >Cacel Leave<span  ><img src="images/cancel.svg" alt="cancel leave" title="Cancel leave" /></span></a></div>
+										<div class="4u"  style="color:#FFDA44"><a href="status.php">Status<span ><img src="images/status.svg" alt="view your status" title="View your status" /></span></a></div>
+										<div class="4u" style="color:#b645ef"><a href="#">History<span><img src="images/history.svg" alt="view your history" title="View Leave History" /></span></a></div> -->
+
+
+										<a href="#" ><span ><img src="images/profile.svg"></span></a>
+
+
+									</div>
+								</div>
+
+
+            </section>
 
         </div>
 
@@ -93,7 +77,7 @@
 
               </ul>
             </section>
-            <p class="copyright">&copy; Leave hive team. Designd by Team hive</p>
+            <p class="copyright">&copy; Leave hive team. Designd by Vikrant</p>
           </footer>
 
   </div>

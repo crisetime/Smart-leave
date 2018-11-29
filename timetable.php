@@ -1,5 +1,5 @@
 <html>
-<head><title>Time table | leave hive</title>
+<head><title>Time table</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
         } else if (val == "3") {
             $("#sem").html("<option value='3a'>3rd A</option><option value='3b'>3rd B</option><option value='5a'>5th A</option><option value='5b'>5th B</option><option value='7a'>7th A</option><option value='7b'>7th B</option>");
         }else if (val == "4") {
-            $("#sem").html("<option value='it3'>Semester 3</option><option value='it5'>Semester 5</option><option value='it7'>Semester 7</option>");
+            $("#sem").html("<option value='it3'>Semester 3</option><option value='it5'>Semester 5</option><option value='7'>Semester 7</option>");
         }
 				 else if (val == "0") {
             $("#sem").html("<option value=''>-Semester or group -</option>");
@@ -25,9 +25,9 @@ $(document).ready(function () {
 <script type="text/javascript">
             function openTab()
             {
-
+                
 				if(document.formname.class.value=='1')
-				{
+				{	
 					//document.write($("#sem").val());
 					var semval = $("#sem").val();
 					if( semval == "cs")
@@ -38,7 +38,7 @@ $(document).ready(function () {
 					window.open('http://172.31.36.37/time/csed/mtechsw.php','_blank');
 				}
 				else if(document.formname.class.value=='2')
-				{
+				{	
 					var semval = $("#sem").val();
 					if( semval == "mca1")
 					window.open('http://172.31.36.37/time/csed/mca2.php','_blank');
@@ -48,7 +48,7 @@ $(document).ready(function () {
 					window.open('http://172.31.36.37/time/csed/mca6.php','_blank');
 				}
 				else if(document.formname.class.value=='3')
-				{
+				{	
 					var semval = $("#sem").val();
 					if( semval == "3a")
 					window.open('http://172.31.36.37/time/csed/btechcsa2.php','_blank');
@@ -64,7 +64,7 @@ $(document).ready(function () {
 					window.open('http://172.31.36.37/time/csed/btechcsb8.php','_blank');
 				}
 				else if(document.formname.class.value=='4')
-				{
+				{	
 					var semval = $("#sem").val();
 					if( semval == "it3")
 					window.open('http://172.31.36.37/time/csed/btechit4.php','_blank');
