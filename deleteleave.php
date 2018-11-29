@@ -42,10 +42,10 @@
 							</form>
 							<hr>
 							<h4>Check Employee </h4>
-								<form class="form-control" actin ="#" method="post">
-							<input type="text" name="Employee Id" placeholder="Employee Id" /> <br>
+								<form class="form-control" action ="insert_leave.php" method="post">
+							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>
 
-							<input type="submit" class="button special" style="background-color:blue;opacity:.8" value="Search ">
+							<input type="submit" name="submit2" class="button special" style="background-color:blue;opacity:.8" value="Search ">
 							</form>
 
 							<hr>

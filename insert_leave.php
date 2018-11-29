@@ -108,5 +108,25 @@ else{
 }
 
 }
+if(isset($_POST['submit2'])){
+	$e_id=htmlentities($_POST['Employee_Id']);
+	$result = mysqli_query($link,"SELECT emp_id FROM faculty where emp_id='$e_id'");
+	$numrows=mysqli_num_rows($result);
+	if($numrows>0)
+	{
+	$msg="User account exists" ;
+	echo "<script type='text/javascript'>
+	alert('$msg');
+	location.href='".'deleteleave'.".php' ;
+	</script>";
+	}
+	else{
+		$msg="User account does not exists!" ;
+		echo "<script type='text/javascript'>
+		alert('$msg');
+		location.href='".'deleteleave'.".php' ;
+		</script>";
+	}
+}
 
 ?>
