@@ -1,5 +1,5 @@
 <html>
-<head><title>Home</title>
+<head><title>Feedback | leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -10,8 +10,8 @@
 <div id="wrapper">
 
         <header id="header">
-          <h1>User</h1>
-          <p>Welcome to leave hive</p>
+          <h1>Feedback</h1>
+          <p>Your feedback is important to us</p>
         </header>
 
         <div id="main">
@@ -21,7 +21,7 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="feedback.php"  class="active">Feedback</a></li>
             <li><a href="about.html" >About us</a></li>
-         
+
 
           </ul>
         </nav>
@@ -33,34 +33,34 @@
                   <form name="formname" action="insertfeedback.php" method="post">
                     <div class="row uniform">
                     </br>
-                    
+
                     <div class="12u$">
                     <input type="text" name="name"  placeholder="Name " required>
                     </div>
                     <div class="12u$">
-                    <input type="text" name="contact"  placeholder="Contact no" required>
+                    <input type="text" name="contact"  placeholder="Contact no" pattern="[6-9]{1}[0-9]{9}" maxlength="10" required>
                     </div>
 
                     <br>
                     <div class="12u$">
-                    <select  class="demo-categoery" name="category">
+                    <select  class="demo-categoery" name="category" required>
                     <option value="">Choose Categoery</option>
                     <option value="suggestion">Suggestion</option>
                     <option value="complain">Complain</option>
-                   
+
                     <option value="Other">Other</option>
                     </select>
                     </div>
-                      
+
                     <div class="12u$" >
-                    <textarea name="feedback" placeholder="Your Feedback!" rows="5"></textarea>
+                    <textarea name="feedback" placeholder="Your Feedback!" rows="5" required></textarea>
                     </div>
-                    
+
                     <div class="12u$">
-                    <input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" >                  
+                    <input type="submit" class="button special" name="submit"  value="Submit" id="submitbtn" >
                     <input type="reset">
                     <br>
-                   
+
                     </div>
                   </div>
                   </form>

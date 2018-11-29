@@ -1,5 +1,6 @@
 <?php
 session_start();
+$link=mysqli_connect("localhost","root","","e-leavesystem")or die("Couldn't connect with the databse");
 ?>
 <html>
 <head><title>Apply Leave | Leave hive</title>
@@ -35,7 +36,7 @@ session_start();
 
         <header id="header">
           <h1><?php echo $_SESSION['name'] ?></h1>
-          <p>Welcome to leave hive</p>
+          <p>Apply leave here</p>
         </header>
 
         <div id="main">
@@ -67,7 +68,8 @@ session_start();
                               <option value="restricted">Restricted Leave</option>
                   </select>
 				  <br>
-									<input type="text" name="contact" placeholder="Contact Number" required=""></br>
+									<input type="text" name="contact" placeholder="Contact Number" pattern="[6-9]{1}[0-9]{9}" maxlength="10" required=""></br>
+
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="checkbox" id="out_of_station" name="out_of_station"  >
@@ -81,7 +83,8 @@ session_start();
 											<script>
 											$('#out_of_station').change(function(){
 												$("#address").prop("disabled", !$(this).is(':checked'));
-												}); </script>
+											});
+											</script>
 											<br>
 
 											<div name="cdate" invisible>
@@ -89,12 +92,50 @@ session_start();
 
 											</div>
                   <!-- <input type="text" name="address" placeholder="Out for (City name)"></br> -->
-                  <textarea rows="5" placeholder="Appliation including reason ,full address etc." name="reason" required=""></textarea></br>
+									<div id="get_station">
 
+									</div>
+                  <textarea rows="5" placeholder="Appliation including reason ,full address etc." name="reason" required=""></textarea></br>
+									<form action="#" method="post">
+										<table class="table" style="color:grey">
+									<thead>
+									<tr>
+									<th>Firstname</th>
+									<th>Lastname</th>
+									<th>Email</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+									<td>John</td>
+									<td>Doe</td>
+									<td>john@example.com</td>
+									<td><button class="button special">Ask for Consent</button></td>
+									</tr>
+									<tr>
+									<td>Mary</td>
+									<td>Moe</td>
+									<td>mary@example.com</td>
+									<td><button class="button special">Ask for Consent</button></td>
+									</tr>
+									<tr>
+									<td>July</td>
+									<td>Dooley</td>
+									<td>july@example.com</td>
+									<td><button class="button special">Ask for Consent</button></td>
+									</tr>
+									</tbody>
+									</table>
+									</form>
                 <ul class="actions">
                   <li><input type="submit" class="button special" name="submit" value="Submit"></li>
                   <li><input type="reset" name="reset" class="button "></li>
                 </ul>
+
+
+
+
+
 				</form>
 
             </section>
@@ -113,7 +154,7 @@ session_start();
               <h2>Contact Us</h2>
               <dl class="alt">
 
-                <dt>Phone</dt> 
+                <dt>Phone</dt>
                 <dd>(+91)8090 410 264</dd>
                 <dt>Email</dt>
                 <dd><a href="mail.google.com/">Vikrant.mnnit00@gmail.com</a></dd>

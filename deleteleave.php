@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+if(empty($_SESSION['emp_id']))
+	header('location:admin.php');
+
+if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['designation']!='admin')
+	header('location:userpage.php');
+?>
 <html>
 <head><title>Leave | Leave hive</title>
 	<link rel="stylesheet" href="assets/css/main.css" /></head>
@@ -20,7 +29,7 @@
           <ul>
             <li><a href="interface.php">Home</a></li>
             <li><a href="deleteleave.php"  class="active" >Leave</a></li>
-            <li><a href="" >Sign out</a></li>
+            <li><a href="logout.php" >Sign out</a></li>
 
           </ul>
         </nav>
@@ -34,18 +43,27 @@
 								<input type="text" name="number" placeholder="Number of leave" required=""></br>
 
 								<ul class="actions">
-												<li><input type="submit" class="button special" name="submit"  value="Submit"></li>
-													<li><input type="reset" value="Reset"></li>
+												<li><input type="submit" class="button special" name="submit" style="background-color:blue; opacity:.8" value="Submit"></li>
+													<li><input type="reset" value="Reset" ></li>
 								</ul>
 
 							</form>
 							<hr>
-							<h4>Employee details </h4>
-								<form class="form-control" actin ="#" method="post">
-							<input type="text" name="Employee Id" placeholder="Employee Id" /> <br>
+							<h4>Check Employee </h4>
+								<form class="form-control" action ="insert_leave.php" method="post">
+							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>
 
-						<input type="submit" class="button special" style="background-color:red; " value="Delete">
+							<input type="submit" name="submit2" class="button special" style="background-color:blue;opacity:.8" value="Search ">
+							</form>
+
+							<hr>
+							<h4>Employee details </h4>
+								<form class="form-control" action ="insert_leave.php" method="post">
+							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>
+
+						<input type="submit" name="submit1" class="button special" style="background-color:red;opacity:.9" value="Delete">
 						</form>
+
 
 						</section>
 

@@ -19,6 +19,7 @@
     $datetime2 = date_create($to);
 	$designation=$_SESSION['designation'] ;
 	$department=$_SESSION['department'] ;
+	$out_of_station=$_SESSION['out_of_station'];
 	$d_o_apply=date("Y/m/d");
 	$no_of_days = $datetime1->diff($datetime2);
 	$no_of_days=$no_of_days->days;
@@ -81,5 +82,51 @@
 		header("location: userpage.php");
 	}
 	}
+
+if(isset($_POST['submit1'])){
+	$e_id=htmlentities($_POST['Employee_Id']);
+	//	echo $e_id;
+
+$result = mysqli_query($link,"SELECT emp_id FROM faculty where emp_id='$e_id'");
+$numrows=mysqli_num_rows($result);
+//echo $numrows;
+if($numrows>0)
+{
+$result = mysqli_query($link,"DELETE from faculty WHERE emp_id='$e_id'");
+$msg="You deleted one faculty account" ;
+echo "<script type='text/javascript'>
+alert('$msg');
+location.href='".'deleteleave'.".php' ;
+</script>";
+}
+else{
+	$msg="User does not exists!" ;
+	echo "<script type='text/javascript'>
+	alert('$msg');
+	location.href='".'deleteleave'.".php' ;
+	</script>";
+}
+
+}
+if(isset($_POST['submit2'])){
+	$e_id=htmlentities($_POST['Employee_Id']);
+	$result = mysqli_query($link,"SELECT emp_id FROM faculty where emp_id='$e_id'");
+	$numrows=mysqli_num_rows($result);
+	if($numrows>0)
+	{
+	$msg="User account exists" ;
+	echo "<script type='text/javascript'>
+	alert('$msg');
+	location.href='".'deleteleave'.".php' ;
+	</script>";
+	}
+	else{
+		$msg="User account does not exists!" ;
+		echo "<script type='text/javascript'>
+		alert('$msg');
+		location.href='".'deleteleave'.".php' ;
+		</script>";
+	}
+}
 
 ?>
