@@ -53,7 +53,7 @@
 											<input type="hidden" name="status" value="<?php echo $status; ?>" />
 										</form>
 									</tr-->
-							<tr>
+
 								<?php
 								$conn = mysqli_connect('localhost','root','','e-leavesystem');
 								$dept=$_SESSION['department'];
@@ -66,14 +66,17 @@
 								$l_from=$row['leave_from'];
 								$l_to=$row['leave_to'];
 								$status=$row['status'];
-								}
+							//	}
 								?>
+								<tr>
 								<td><?php echo $eid; ?></td>
 								<td><?php echo $type; ?></td>
 								<td><?php echo $l_from; ?></td>
 								<td><?php echo $l_to; ?></td>
 								<td><?php echo $status; ?></td>
 							</tr>
+							<?php
+							} ?>
 											</tbody>
 												<tfoot>
 													<tr>

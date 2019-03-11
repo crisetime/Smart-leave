@@ -19,7 +19,7 @@
     $datetime2 = date_create($to);
 	$designation=$_SESSION['designation'] ;
 	$department=$_SESSION['department'] ;
-	$out_of_station=$_SESSION['out_of_station'];
+	// $out_of_station=$_SESSION['out_of_station'];
 	$d_o_apply=date("Y/m/d");
 	$no_of_days = $datetime1->diff($datetime2);
 	$no_of_days=$no_of_days->days;

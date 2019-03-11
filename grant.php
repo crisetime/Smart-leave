@@ -2,9 +2,9 @@
 session_start();
 if(empty($_SESSION['emp_id']))
 	header('location:admin.php');
-	
+
 if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['designation']!='admin')
-	header('location:userpage.php'); 
+	header('location:userpage.php');
 
 function confirm($eid,$type)
 {
@@ -59,7 +59,7 @@ alert("You decided to not cancel the form!");
           <nav id="nav">
           <ul>
             <li><a href="interface.php">Home</a></li>
-            <li><a href="#"  class="active" >Status</a></li>
+            <li><a href="#"  class="active" >Grant leave</a></li>
             <li><a href="logout.php" >Sign out</a></li>
 
           </ul>
@@ -88,7 +88,7 @@ alert("You decided to not cancel the form!");
 					<?php
 					$conn = mysqli_connect('localhost','root','','e-leavesystem');
 					$dept=$_SESSION['department'];
-					$sql = "SELECT * FROM apply_for_leave WHERE status='pending' AND consent!='false' AND department='$dept' AND emp_id NOT IN (SELECT DISTINCT head_id FROM leave_providers WHERE designation='admin') ";
+					$sql = "SELECT * FROM apply_for_leave WHERE status='pending' AND  department='$dept' AND emp_id NOT IN (SELECT DISTINCT head_id FROM leave_providers WHERE designation='admin') ";
 					$res=mysqli_query($conn,$sql);
 
 					while( $row = mysqli_fetch_array($res))
@@ -166,7 +166,7 @@ alert("You decided to not cancel the form!");
 						$sql= " UPDATE apply_for_leave SET status='cancel' WHERE emp_id='$eid' and leave_type='$type'
 							and leave_from='$l_from' and leave_to='$l_to' ";
 						mysqli_query($conn,$sql);
-						header("refresh:1,url=grant.php");
+						header("refresh:1, url=grant.php");
 						}
 												?>
 												</tbody>

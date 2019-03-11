@@ -19,7 +19,7 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 <div id="wrapper">
 
         <header id="header">
-          <h1>Leaves</h1>
+          <h1>User</h1>
           <!-- <p>Welcome to leave hive</p> -->
         </header>
 
@@ -36,7 +36,7 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 
           <!-- Content -->
             <section id="content" class="main">
-								<h4>Add leave </h4>
+								<!-- <h4>Add leave </h4>
 							<form class="form-control" name="formname" action="#" method="post">
 
 								<input type="text" name="empid" placeholder="Leave Name" required=""></br>
@@ -45,10 +45,10 @@ if((!empty($_SESSION['emp_id']) || !empty($_SESSION['name']))&& $_SESSION['desig
 								<ul class="actions">
 												<li><input type="submit" class="button special" name="submit" style="background-color:blue; opacity:.8" value="Submit"></li>
 													<li><input type="reset" value="Reset" ></li>
-								</ul>
+								</ul> -->
 
 							</form>
-							<hr>
+							<!-- <hr> -->
 							<h4>Check Employee </h4>
 								<form class="form-control" action ="insert_leave.php" method="post">
 							<input type="text" name="Employee_Id" placeholder="Employee Id" /> <br>

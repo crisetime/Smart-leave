@@ -82,7 +82,7 @@
 				{
 				?>
 					<li><a href="userpage.php">Home</a></li>
-					<li><a href="#"  class="active" >Status</a></li>
+					<li><a href="#"  class="active" >Get remaining leave</a></li>
 					<li><a href="logout.php" >Sign out</a></li>
 				<?php
 				}

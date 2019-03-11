@@ -87,16 +87,16 @@ $link=mysqli_connect("localhost","root","","e-leavesystem")or die("Couldn't conn
 											</script>
 											<br>
 
-											<div name="cdate" invisible>
+											<!-- <div name="cdate" invisible>
 												From : <input type="date" name="from" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" required="">   &nbsp &nbspTo : <input type="date" min="<?php echo date("Y-m-d"); ?>" max="2020-01-01" name="to" required=""></br></br>
 
-											</div>
+											</div> -->
                   <!-- <input type="text" name="address" placeholder="Out for (City name)"></br> -->
 									<div id="get_station">
 
 									</div>
                   <textarea rows="5" placeholder="Appliation including reason ,full address etc." name="reason" required=""></textarea></br>
-									<form action="#" method="post">
+									<!-- <form action="#" method="post">
 										<table class="table" style="color:grey">
 									<thead>
 									<tr>
@@ -126,7 +126,7 @@ $link=mysqli_connect("localhost","root","","e-leavesystem")or die("Couldn't conn
 									</tr>
 									</tbody>
 									</table>
-									</form>
+									</form> -->
                 <ul class="actions">
                   <li><input type="submit" class="button special" name="submit" value="Submit"></li>
                   <li><input type="reset" name="reset" class="button "></li>
